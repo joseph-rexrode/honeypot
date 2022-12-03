@@ -14,4 +14,30 @@ public class FamilyController {
 	
 	@Autowired
 	UserService uServ;
+	
+	// Create new Family
+	// TODO
+	
+	
+	// Specific Family screen
+	
+		// Add Family Members
+		// TODO
+	
+		// Remove Family Members
+		// TODO
+	
+		// Request to join Family
+		// TODO
+	
+		// Leave Family
+		// TODO
+	
+	
+	// See your families
+	// TODO
+	
+	
+	
+	
 }

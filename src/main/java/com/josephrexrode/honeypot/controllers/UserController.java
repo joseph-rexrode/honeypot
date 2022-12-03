@@ -92,4 +92,8 @@ public class UserController {
 		
 		return "/home.jsp";
 	}
+	
+	// Logout functionality
+	// TODO
+	
 }
