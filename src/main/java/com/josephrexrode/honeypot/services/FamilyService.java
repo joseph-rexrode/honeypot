@@ -29,4 +29,9 @@ public class FamilyService {
 	}
 	
 	
+	public Family getFamily(Long id) {
+		return fRepo.findById(id).orElse(null);
+	}
+	
+	
 }
