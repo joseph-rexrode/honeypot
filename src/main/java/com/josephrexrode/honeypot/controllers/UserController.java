@@ -21,6 +21,8 @@ public class UserController {
 	@Autowired
 	UserService uServ;
 	
+	// LOGIN/REGISTER PAGE
+	
 	@GetMapping("/")
 	public String index(Model model) {
 		
@@ -29,6 +31,8 @@ public class UserController {
 		
 		return "/index.jsp";
 	}
+	
+	// REGISTER
 	
 	@PostMapping("/register")
 	public String register(
@@ -55,6 +59,8 @@ public class UserController {
 		
 	}
 	
+	// LOGIN
+	
 	@PostMapping("/login")
 	public String login(
 			@Valid @ModelAttribute("newLogin") LoginUser newLogin,
@@ -79,6 +85,8 @@ public class UserController {
 		return "redirect:/home";
 	}
 	
+	// HOME SCREEN
+	
 	@GetMapping("/home")
 	public String home(
 			Model model,
@@ -93,7 +101,13 @@ public class UserController {
 		return "/home.jsp";
 	}
 	
-	// Logout functionality
-	// TODO
+	// LOGOUT
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		
+		session.invalidate();
+		return "redirect:/";
+	}
 	
 }

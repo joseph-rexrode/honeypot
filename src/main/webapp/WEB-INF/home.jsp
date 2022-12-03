@@ -35,8 +35,8 @@
             						Families
           						</a>
           						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            						<li><a class="dropdown-item" href="/family">My Families</a></li>
-            						<li><a class="dropdown-item" href="/family/new">New Family</a></li>
+            						<li><a class="dropdown-item" href="/families">My Families</a></li>
+            						<li><a class="dropdown-item" href="/families/new">New Family</a></li>
           						</ul>
         					</li>
     						<li class="nav-item dropdown">
@@ -48,6 +48,9 @@
             						<li><a class="dropdown-item" href="/honeypot/new">New Honey Pot</a></li>
           						</ul>
         					</li>
+        					<li class="nav-item">
+    							<a href="/logout" class="nav-link">Logout</a>
+    						</li>
     					</ul>
     				</div>
 				</div>
