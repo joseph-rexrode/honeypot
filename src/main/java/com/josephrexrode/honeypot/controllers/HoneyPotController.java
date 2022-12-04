@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/honeypot")
+@RequestMapping("/honeypots")
 public class HoneyPotController {
 
 	
@@ -21,7 +21,20 @@ public class HoneyPotController {
 			return "redirect:/";
 		}
 		
-		return "/honeypots/pots";
+		return "/honeypots/pots.jsp";
+		
+	}
+	
+	@GetMapping("/new")
+	public String newHoney(
+			Model model,
+			HttpSession session) {
+		
+		if (session.getAttribute("loggedUser") == null) {
+			return "redirect:/";
+		}
+		
+		return "/honeypots/new.jsp";
 		
 	}
 }

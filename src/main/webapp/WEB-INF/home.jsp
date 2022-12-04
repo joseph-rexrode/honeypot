@@ -44,8 +44,8 @@
             						Honey Pots
           						</a>
           						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            						<li><a class="dropdown-item" href="/honeypot">My Honey Pots</a></li>
-            						<li><a class="dropdown-item" href="/honeypot/new">New Honey Pot</a></li>
+            						<li><a class="dropdown-item" href="/honeypots">My Honey Pots</a></li>
+            						<li><a class="dropdown-item" href="/honeypots/new">New Honey Pot</a></li>
           						</ul>
         					</li>
         					<li class="nav-item">

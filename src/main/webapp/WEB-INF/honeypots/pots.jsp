@@ -31,7 +31,7 @@
     							<a href="/home" class="nav-link">Home</a>
     						</li>
     						<li class="nav-item dropdown">
-          						<a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+          						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             						Families
           						</a>
           						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -39,8 +39,8 @@
             						<li><a class="dropdown-item" href="/families/new">New Family</a></li>
           						</ul>
         					</li>
-    						<li class="nav-item dropdown">
-          						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    						<li class="nav-item active dropdown">
+          						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
             						Honey Pots
           						</a>
           						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -56,7 +56,7 @@
 				</div>
 			</nav>
 			<div class="row my-4">
-				<h1>My Families</h1>
+				<h1>My Honey Pots</h1>
 			</div>
 		</div>
 	</body>
