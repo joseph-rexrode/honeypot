@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-	    <title>Home</title>
+	    <title>${fam.getFamilyName}</title>
 	    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/style.css">
 	    <script src="/webjars/jquery/jquery.min.js"></script>

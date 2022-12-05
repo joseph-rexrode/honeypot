@@ -1,9 +1,16 @@
 package com.josephrexrode.honeypot.models;
 
+
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
@@ -25,6 +32,14 @@ public class User {
 	
 	@Transient
 	private String confirm;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(
+			name = "users_families",
+			joinColumns = @JoinColumn(name = "users_id"),
+			inverseJoinColumns = @JoinColumn(name = "families_id")
+			)
+	private List<Family> families;
 	
 	public User() {}
 
@@ -67,6 +82,14 @@ public class User {
 
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
+	}
+
+	public List<Family> getFamilies() {
+		return families;
+	}
+
+	public void setFamilies(List<Family> families) {
+		this.families = families;
 	}
 	
 }

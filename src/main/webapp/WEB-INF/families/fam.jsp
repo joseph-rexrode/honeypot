@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-	    <title>Home</title>
+	    <title>Your Families</title>
 	    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/style.css">
 	    <script src="/webjars/jquery/jquery.min.js"></script>
@@ -57,6 +57,18 @@
 			</nav>
 			<div class="row my-4">
 				<h1>My Families</h1>
+			</div>
+			
+			<div class="row row-cols-1 row-cols-sm-2 g-3">
+				<c:forEach var="family" items="${families}">
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">${family.getFamilyName()}</h5>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</body>

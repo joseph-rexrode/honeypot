@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-	    <title>Home</title>
+	    <title>New Family</title>
 	    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/style.css">
 	    <script src="/webjars/jquery/jquery.min.js"></script>
@@ -55,8 +55,30 @@
     				</div>
 				</div>
 			</nav>
+			
 			<div class="row my-4">
 				<h1>New Family</h1>
+			</div>
+			
+			<div>
+				<form:form action="/families/new" method="POST" modelAttribute="family">
+					<div class="row mb-3">
+						<form:errors path="familyName" class="text-danger"/>
+					</div>
+					
+					<div class="row mb-3">
+						<form:label class="col-sm-2 col-form-label" path="familyName">Family Name:</form:label>
+						<div class="col-sm-10">
+							<form:input type="text" path="familyName" class="form-control"/>
+						</div>
+					</div>
+					
+					<div class="d-flex flex-row my-4 justify-content-end">
+						<div class="col-4">
+							<button class="btn btn-primary w-100" type="submit">Create Family</button>
+						</div>
+					</div>
+				</form:form>
 			</div>
 		</div>
 	</body>
