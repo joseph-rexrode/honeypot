@@ -1,6 +1,5 @@
 package com.josephrexrode.honeypot.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +22,34 @@ public class FamilyService {
 	// ... from the list of Users is added to an array of Members...
 	// ... which is then parsed through here and added to the users attribute
 	public Family create(User u, Family f) {
-		f.setUsers(new ArrayList<User>());
 		f.getUsers().add(u);
 		f.setCreator(u);
 		return fRepo.save(f);
 	}
 	
 	
+	// Finds a family by its Id
 	public Family getFamily(Long id) {
 		return fRepo.findById(id).orElse(null);
 	}
 	
+	
+	// Update family
+	public Family update(Family f, Family changes) {
+		f.setFamilyName(changes.getFamilyName());
+		f.setUsers(changes.getUsers());
+		return fRepo.save(f);
+	}
+	
+	
+	// Delete a family
+	public String destroy(Long id) {
+		fRepo.deleteById(id);
+		return "This family has been deleted";
+	}
+	
+	
+	// Finds a list of all families the User is in
 	public List<Family> getUserFamilies(User u) {
 		
 		return fRepo.findAllByUsers(u);

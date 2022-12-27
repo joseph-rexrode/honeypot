@@ -18,7 +18,7 @@
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container">	
+		<div class="container vh-100 vw-100">	
 			<div class="navPane">
 				<h1>Welcome to Honey Pot Vacation Planner!</h1>
 			</div>
@@ -26,52 +26,64 @@
 			<!-- Maybe make register block by itself in center with like honey pot graphic -->	
 			<!-- And include a "returning user?" button that switches to the login block -->
 			
-			<div class="block">
-				<h2>Register</h2>
-				<form:form action="/register" method="POST" modelAttribute="newUser">
-					<p>
-						<form:label path="username">Username: </form:label>
-						<form:input path="username"/>
-						<form:errors path="username" class="text-danger"/>
-					</p>
-					<p>
-						<form:label path="email">Email: </form:label>
-						<form:input path="email" type="email"/>
-						<form:errors path="email" class="text-danger"/>
-					</p>
-					<p>
-						<form:label path="password">Password: </form:label>
-						<form:input path="password" type="password"/>
-						<form:errors path="password" class="text-danger"/>
-					</p>
-					<p>
-						<form:label path="confirm">Confirm Password: </form:label>
-						<form:input path="confirm" type="password"/>
-						<form:errors path="password" class="text-danger"/>
-					</p>
-					
-					<input type="submit" value="Register">
-				</form:form>
-			</div>
-			
-			<div class="block">
-				<h2>Login</h2>
-				<form:form action="/login" method="POST" modelAttribute="newLogin">
-					<p>
-						<form:label path="email">Email: </form:label>
-						<form:input path="email" type="email"/>
-						<form:errors path="email" class="text-danger"/>
-					</p>
-					<p>
-						<form:label path="password">Password: </form:label>
-						<form:input path="password" type="password"/>
-						<form:errors path="password" class="text-danger"/>
-					</p>
-					
-					<input type="submit" value="Login">
-				</form:form>
+			<!-- Eventually add mobile friendly and small screen friendly view transitions -->
+			<div class="d-flex justify-content-around align-items-center h-75 overflow-auto row">
+				<div class="block d-flex flex-column col-5 h-75 bg-info">
+					<form:form action="/register" method="POST" modelAttribute="newUser" class="h-100 my-3">
+						<div class="d-flex flex-column justify-content-between align-items-center h-100">
+							<div>
+								<h2>Register</h2>
+								<p class="d-flex justify-content-between row">
+									<form:label path="username" class="col-6">Username: </form:label>
+									<form:input path="username" class="col-6"/>
+									<form:errors path="username" class="text-danger"/>
+								</p>
+								<p class="d-flex justify-content-between row">
+									<form:label path="email" class="col-6">Email: </form:label>
+									<form:input path="email" type="email" class="col-6"/>
+									<form:errors path="email" class="text-danger"/>
+								</p>
+								<p class="d-flex justify-content-between row">
+									<form:label path="password" class="col-6">Password: </form:label>
+									<form:input path="password" type="password" class="col-6"/>
+									<form:errors path="password" class="text-danger"/>
+								</p>
+								<p class="d-flex justify-content-between row">
+									<form:label path="confirm" class="col-6">Confirm Password: </form:label>
+									<form:input path="confirm" type="password" class="col-6"/>
+									<form:errors path="password" class="text-danger"/>
+								</p>		
+							</div>
+							<div class="w-50">
+								<input type="submit" value="Register" class="btn btn-primary w-100">
+							</div>
+						</div>
+					</form:form>
+				</div>
+				
+				<div class="block d-flex flex-column bg-info col-5 h-75">
+					<form:form action="/login" method="POST" modelAttribute="newLogin" class="h-100 my-3">
+						<div class="d-flex flex-column justify-content-between align-items-center h-100">
+							<div>
+								<h2>Login</h2>
+								<p class="d-flex justify-content-between row">
+									<form:label path="email" class="col-6">Email: </form:label>
+									<form:input path="email" type="email" class="col-6"/>
+									<form:errors path="email" class="text-danger"/>
+								</p>
+								<p class="d-flex justify-content-between row">
+									<form:label path="password" class="col-6">Password: </form:label>
+									<form:input path="password" type="password" class="col-6"/>
+									<form:errors path="password" class="text-danger"/>
+								</p>
+							</div>
+							<div class="w-50">
+								<input type="submit" value="Login" class="btn btn-primary w-100">
+							</div>
+						</div>
+					</form:form>
+				</div>
 			</div>
 		</div>
-		
 	</body>
 </html>

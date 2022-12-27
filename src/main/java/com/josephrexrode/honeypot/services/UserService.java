@@ -1,5 +1,6 @@
 package com.josephrexrode.honeypot.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -55,6 +56,10 @@ public class UserService {
 		}
 		
 		return user;
+	}
+	
+	public List<User> findAllUsersExceptYou(Long id) {
+		return uRepo.findByIdNot(id);
 	}
 	
 }

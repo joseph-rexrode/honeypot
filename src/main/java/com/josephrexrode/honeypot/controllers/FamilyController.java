@@ -57,11 +57,18 @@ public class FamilyController {
 	@GetMapping("/new")
 	public String newFamily(
 			HttpSession session,
-			@ModelAttribute("family") Family family) {
+			@ModelAttribute("family") Family family,
+			Model model) {
 		
 		if (session.getAttribute("loggedUser") == null) {
 			return "redirect:/";
 		}
+		
+		User u = (User) session.getAttribute("loggedUser");
+		
+		List<User> otherUsers = uServ.findAllUsersExceptYou(u.getId());
+		
+		model.addAttribute("users", otherUsers);
 				
 		return "/families/new.jsp";
 	}
@@ -73,14 +80,18 @@ public class FamilyController {
 			BindingResult result,
 			Model model) {
 		
+		User u = (User) session.getAttribute("loggedUser");
+		
 		if (result.hasErrors()) {
+			
+			List<User> otherUsers = uServ.findAllUsersExceptYou(u.getId());
+			model.addAttribute("users", otherUsers);
 			return "/families/new.jsp";
 		}
 		
-		User user = (User) session.getAttribute("loggedUser");
 		
-		fServ.create(user, family);
-		
+		fServ.create(u, family);
+				
 		return "redirect:/families";
 		
 	}
@@ -108,15 +119,45 @@ public class FamilyController {
 		// Add Family Members
 		// TODO
 	
+	@PostMapping("/{famId}/add")
+	public String add(
+			@PathVariable("famId") Long id,
+			Model model,
+			HttpSession session) {
+		
+		return "";
+	}
+	
 		// Remove Family Members
 		// TODO
 	
+	@PostMapping("/{famId}/remove")
+	public String removeMembers(
+			@PathVariable("famId") Long id,
+			Model model,
+			HttpSession session) {
+		
+		return "";
+		
+	}
+	
 		// Request to join Family
 		// TODO
+		// This will be additional functionality to be completed later
+	
 	
 		// Leave Family
 		// TODO
 	
+	@PostMapping("/{famId}/leave")
+	public String leaveFamily(
+			@PathVariable("famId") Long id,
+			Model model,
+			HttpSession session) {
+		
+		return "";
+		
+	}
 	
 	
 	

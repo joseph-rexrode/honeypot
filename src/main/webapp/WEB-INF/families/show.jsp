@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-	    <title>${fam.getFamilyName}</title>
+	    <title>${fam.getFamilyName()}</title>
 	    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/style.css">
 	    <script src="/webjars/jquery/jquery.min.js"></script>
@@ -57,7 +57,7 @@
 			</nav>
 			<div class="row my-4">
 				<h1>${famId}</h1>
-				<h2>${fam.getFamilyName}</h2>
+				<h2>${fam.getFamilyName()}</h2>
 			</div>
 		</div>
 	</body>

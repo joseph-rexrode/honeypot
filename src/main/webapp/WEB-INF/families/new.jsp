@@ -73,11 +73,22 @@
 						</div>
 					</div>
 					
+					<div class="row mb-3">
+						<form:label class="col-sm-2 col-form-label" path="users">Users:</form:label>
+						<div class="col-sm-10">
+							<c:forEach var="user" items="${users}">
+								<form:checkbox path="users" value="${user}"/>
+								${user.getUsername()}
+							</c:forEach>
+						</div>
+					</div>
+					
 					<div class="d-flex flex-row my-4 justify-content-end">
 						<div class="col-4">
 							<button class="btn btn-primary w-100" type="submit">Create Family</button>
 						</div>
 					</div>
+					
 				</form:form>
 			</div>
 		</div>

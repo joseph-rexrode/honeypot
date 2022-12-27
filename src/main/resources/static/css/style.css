@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.navPane {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
