@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.josephrexrode.honeypot.models.Family;
@@ -31,7 +32,6 @@ public class FamilyController {
 	UserService uServ;
 	
 	// See your families
-	// TODO
 	
 	@GetMapping("")
 	public String families(
@@ -52,7 +52,6 @@ public class FamilyController {
 	}
 	
 	// Create new Family
-	// TODO
 	
 	@GetMapping("/new")
 	public String newFamily(
@@ -101,6 +100,7 @@ public class FamilyController {
 	
 	@GetMapping("/{famId}")
 	public String show(
+			@ModelAttribute("family") Family family,
 			@PathVariable("famId") Long id,
 			Model model,
 			HttpSession session) {
@@ -112,20 +112,37 @@ public class FamilyController {
 		Family fam = fServ.getFamily(id);
 		
 		model.addAttribute("fam", fam);
+		model.addAttribute("addableMembers", uServ.findAllUsersNotInFamily(fam));
 		
 		return "/families/show.jsp";
 	}
 	
 		// Add Family Members
-		// TODO
+		// Maybe eventually change it to inviting a person to family
+			// and upon acceptance, that user is added
 	
-	@PostMapping("/{famId}/add")
+	@PutMapping("/{famId}/add")
 	public String add(
+			@Valid @ModelAttribute("family") Family family,
+			BindingResult result,
 			@PathVariable("famId") Long id,
 			Model model,
 			HttpSession session) {
+
 		
-		return "";
+		Family fam = fServ.getFamily(id);
+		
+		
+		if (result.hasErrors()) {
+			System.out.println(result);
+			model.addAttribute("fam", fam);
+			model.addAttribute("addableMembers", uServ.findAllUsersNotInFamily(fam));
+			return "/families/show.jsp";
+		}
+		
+		fServ.addMembers(fam, family.getUsers());
+		
+		return "redirect:/";
 	}
 	
 		// Remove Family Members

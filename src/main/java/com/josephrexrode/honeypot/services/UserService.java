@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.josephrexrode.honeypot.models.Family;
 import com.josephrexrode.honeypot.models.LoginUser;
 import com.josephrexrode.honeypot.models.User;
 import com.josephrexrode.honeypot.repositories.UserRepository;
@@ -60,6 +61,10 @@ public class UserService {
 	
 	public List<User> findAllUsersExceptYou(Long id) {
 		return uRepo.findByIdNot(id);
+	}
+	
+	public List<User> findAllUsersNotInFamily(Family f) {
+		return uRepo.findAllDistinctByFamiliesNotContaining(f);
 	}
 	
 }

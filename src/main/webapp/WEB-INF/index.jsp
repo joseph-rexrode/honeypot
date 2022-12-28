@@ -28,7 +28,7 @@
 			
 			<!-- Eventually add mobile friendly and small screen friendly view transitions -->
 			<div class="d-flex justify-content-around align-items-center h-75 overflow-auto row">
-				<div class="block d-flex flex-column col-5 h-75 bg-info">
+				<div class="block d-flex flex-column col-5 h-75 bg-info rounded-3">
 					<form:form action="/register" method="POST" modelAttribute="newUser" class="h-100 my-3">
 						<div class="d-flex flex-column justify-content-between align-items-center h-100">
 							<div>
@@ -61,7 +61,7 @@
 					</form:form>
 				</div>
 				
-				<div class="block d-flex flex-column bg-info col-5 h-75">
+				<div class="block d-flex flex-column bg-info col-5 h-75 rounded-3">
 					<form:form action="/login" method="POST" modelAttribute="newLogin" class="h-100 my-3">
 						<div class="d-flex flex-column justify-content-between align-items-center h-100">
 							<div>

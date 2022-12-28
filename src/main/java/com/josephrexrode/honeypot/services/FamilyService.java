@@ -34,6 +34,18 @@ public class FamilyService {
 	}
 	
 	
+	// Add family members
+	// ADDING WORKS NOW BUT LOGS USER OUT EACH TIME FOR SOME REASON
+	public Family addMembers(Family f, List<User> members) {
+		// for each member in list of added members
+		for (var i = 0; i < members.size(); i++) {
+			// add to family f
+			f.getUsers().add(members.get(i));
+		}
+		return fRepo.save(f);
+	}
+	
+	
 	// Update family
 	public Family update(Family f, Family changes) {
 		f.setFamilyName(changes.getFamilyName());
