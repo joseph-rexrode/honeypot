@@ -67,4 +67,14 @@ public class UserService {
 		return uRepo.findAllDistinctByFamiliesNotContaining(f);
 	}
 	
+	public List<User> findAllUsersInFamily(Family f, User u) {
+		List<User> includesUser = uRepo.findAllByFamilies(f);
+		
+		if (includesUser.contains(u)) {
+			includesUser.remove(includesUser.indexOf(u));
+		}
+		
+		return includesUser;
+	}
+	
 }

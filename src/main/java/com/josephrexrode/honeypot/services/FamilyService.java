@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 import com.josephrexrode.honeypot.models.Family;
 import com.josephrexrode.honeypot.models.User;
@@ -35,7 +36,13 @@ public class FamilyService {
 	
 	
 	// Add family members
-	public Family addMembers(Family f, List<User> members) {
+	public Family addMembers(Family f, List<User> members, BindingResult result) {
+		// if members list is null, return error
+		if (members == null) {
+			result.rejectValue("users", "Matches", "No Users Selected");
+			return null;
+		}
+		
 		// for each member in list of added members
 		for (var i = 0; i < members.size(); i++) {
 			// add to family f
@@ -59,6 +66,8 @@ public class FamilyService {
 		return "This family has been deleted";
 	}
 	
+	
+	// OTHER METHODS
 	
 	// Finds a list of all families the User is in
 	public List<Family> getUserFamilies(User u) {

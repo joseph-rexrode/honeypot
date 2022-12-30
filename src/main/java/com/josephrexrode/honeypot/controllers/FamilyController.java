@@ -101,6 +101,7 @@ public class FamilyController {
 	@GetMapping("/{famId}")
 	public String show(
 			@ModelAttribute("family") Family family,
+			@ModelAttribute("family2") Family family2,
 			@PathVariable("famId") Long id,
 			Model model,
 			HttpSession session) {
@@ -110,9 +111,11 @@ public class FamilyController {
 		}
 		
 		Family fam = fServ.getFamily(id);
+		User u = (User) session.getAttribute("loggedUser");
 		
 		model.addAttribute("fam", fam);
 		model.addAttribute("addableMembers", uServ.findAllUsersNotInFamily(fam));
+		model.addAttribute("removableMembers", uServ.findAllUsersInFamily(fam, u));
 		
 		return "/families/show.jsp";
 	}
@@ -131,16 +134,18 @@ public class FamilyController {
 
 		
 		Family fam = fServ.getFamily(id);
+		User u = (User) session.getAttribute("loggedUser");
 		
+		fServ.addMembers(fam, family.getUsers(), result);
 		
 		if (result.hasErrors()) {
-			System.out.println(result);
 			model.addAttribute("fam", fam);
 			model.addAttribute("addableMembers", uServ.findAllUsersNotInFamily(fam));
+			model.addAttribute("removableMembers", uServ.findAllUsersInFamily(fam, u));
+			model.addAttribute("family2", new Family());
 			return "/families/show.jsp";
 		}
 		
-		fServ.addMembers(fam, family.getUsers());
 		
 		return "redirect:/families";
 	}
@@ -148,11 +153,22 @@ public class FamilyController {
 		// Remove Family Members
 		// TODO
 	
-	@PostMapping("/{famId}/remove")
+	@PutMapping("/{famId}/remove")
 	public String removeMembers(
+			@Valid @ModelAttribute("family2") Family family,
+			BindingResult result,
 			@PathVariable("famId") Long id,
 			Model model,
 			HttpSession session) {
+		
+		Family fam = fServ.getFamily(id);
+		User u = (User) session.getAttribute("loggedUser");
+		
+		if (result.hasErrors()) {
+			model.addAttribute("fam", fam);
+			model.addAttribute("addableMembers", uServ.findAllUsersNotInFamily(fam));
+			model.addAttribute("removableMembers", uServ.findAllUsersInFamily(fam, u));
+		}
 		
 		return "";
 		

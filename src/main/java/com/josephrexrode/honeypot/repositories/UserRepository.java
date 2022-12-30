@@ -17,4 +17,6 @@ public interface UserRepository extends CrudRepository<User, Long>{
 	List<User> findByIdNot(Long id);
 	
 	List<User> findAllDistinctByFamiliesNotContaining(Family f);
+	
+	List<User> findAllByFamilies(Family f);
 }
