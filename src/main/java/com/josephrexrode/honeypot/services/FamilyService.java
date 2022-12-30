@@ -52,6 +52,24 @@ public class FamilyService {
 	}
 	
 	
+	// Remove family members
+	public Family removeMembers(Family f, List<User> members, BindingResult result) {
+		// if members list is null, return error
+		if (members == null) {
+			result.rejectValue("users", "Matches", "No Users Selected");
+			return null;
+		}
+		
+		// for each member in list of members to remove
+		for (var i = 0; i < members.size(); i++) {
+			User u = members.get(i);
+			f.getUsers().removeIf(n -> (n.equals(u)));
+		}
+		
+		return fRepo.save(f);
+	}
+	
+	
 	// Update family
 	public Family update(Family f, Family changes) {
 		f.setFamilyName(changes.getFamilyName());

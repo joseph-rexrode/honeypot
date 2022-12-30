@@ -55,47 +55,57 @@
     				</div>
 				</div>
 			</nav>
+			
 			<div class="row my-4">
 				<h2>${fam.getFamilyName()}</h2>
 			</div>
 			
-			<div>
-				<form:form action="/families/${fam.getId()}/add" method="POST" modelAttribute="family">
-					<input type="hidden" name="_method" value="put">
-					<div class="row mb-3">
-						<form:errors path="users" class="text-danger"/>
-					</div>
-					<div class="row mb-3">
-						<form:label class="col-sm-2 col-form-label" path="users">Users:</form:label>
-						<div class="col-sm-10">
-							<c:forEach var="user" items="${addableMembers}">
-								<form:checkbox path="users" value="${user}"/>
-								${user.getUsername()}
-							</c:forEach>
+			<c:if test="${addableMembers.size() != 0}">
+				<div>
+					<form:form action="/families/${fam.getId()}/add" method="POST" modelAttribute="family">
+						<input type="hidden" name="_method" value="put">
+						<div class="row mb-3">
+							<form:errors path="users" class="text-danger"/>
 						</div>
-						<form:input type="hidden" path="familyName" value="${fam.getFamilyName()}"/>
-					</div>
-					
-					<div class="d-flex flex-row my-4 justify-content-end">
-						<button type="submit" class="btn btn-primary">Add Family Member(s)</button>
-					</div>
-				</form:form>
-			</div>
+						<div class="row mb-3">
+							<form:label class="col-sm-2 col-form-label" path="users">Users:</form:label>
+							<div class="col-sm-10">
+								<c:forEach var="user" items="${addableMembers}">
+									<form:checkbox path="users" value="${user}"/>
+									${user.getUsername()}
+								</c:forEach>
+							</div>
+							<form:input type="hidden" path="familyName" value="${fam.getFamilyName()}"/>
+						</div>
+						
+						<div class="d-flex flex-row my-4 justify-content-end">
+							<button type="submit" class="btn btn-primary">Add Family Member(s)</button>
+						</div>
+					</form:form>
+				</div>
+			</c:if>
 			
-			<div>
-				<form:form action="/families/${fam.getId()}/remove" method="POST" modelAttribute="family2">
-					<input type="hidden" name="_method" value="put">
-					<div class="row mb-3">
-						<form:label class="col-sm-2 col-form-label" path="users">Users:</form:label>
-						<div class="col-sm-10">
-							<c:forEach var="user" items="${removableMembers}">
-								<form:checkbox path="users" value="${user}"/>
-								${user.getUsername()}
-							</c:forEach>
+			<c:if test="${removableMembers.size() != 0}">
+				<div>
+					<form:form action="/families/${fam.getId()}/remove" method="POST" modelAttribute="family2">
+						<input type="hidden" name="_method" value="put">
+						<div class="row mb-3">
+							<form:label class="col-sm-2 col-form-label" path="users">Users:</form:label>
+							<div class="col-sm-10">
+								<c:forEach var="user" items="${removableMembers}">
+									<form:checkbox path="users" value="${user}"/>
+									${user.getUsername()}
+								</c:forEach>
+							</div>
+							<form:input type="hidden" path="familyName" value="${fam.getFamilyName()}"/>
 						</div>
-					</div>
-				</form:form>
-			</div>
+						
+						<div class="d-flex flex-row my-4 justify-content-end">
+							<button type="submit" class="btn btn-primary">Remove Family Member(s)</button>
+						</div>
+					</form:form>
+				</div>
+			</c:if>
 		</div>
 	</body>
 </html>

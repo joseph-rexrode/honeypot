@@ -164,13 +164,17 @@ public class FamilyController {
 		Family fam = fServ.getFamily(id);
 		User u = (User) session.getAttribute("loggedUser");
 		
+		fServ.removeMembers(fam, family.getUsers(), result);
+		
 		if (result.hasErrors()) {
 			model.addAttribute("fam", fam);
 			model.addAttribute("addableMembers", uServ.findAllUsersNotInFamily(fam));
 			model.addAttribute("removableMembers", uServ.findAllUsersInFamily(fam, u));
+			model.addAttribute("family", new Family());
+			return "/families/show.jsp";
 		}
 		
-		return "";
+		return "redirect:/families";
 		
 	}
 	
