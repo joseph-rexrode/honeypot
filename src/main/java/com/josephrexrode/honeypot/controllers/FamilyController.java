@@ -147,7 +147,7 @@ public class FamilyController {
 		}
 		
 		
-		return "redirect:/families";
+		return "redirect:/families/{famId}";
 	}
 	
 		// Remove Family Members
@@ -174,7 +174,7 @@ public class FamilyController {
 			return "/families/show.jsp";
 		}
 		
-		return "redirect:/families";
+		return "redirect:/families/{famId}";
 		
 	}
 	
