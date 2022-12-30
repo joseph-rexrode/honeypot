@@ -142,7 +142,7 @@ public class FamilyController {
 		
 		fServ.addMembers(fam, family.getUsers());
 		
-		return "redirect:/";
+		return "redirect:/families";
 	}
 	
 		// Remove Family Members
