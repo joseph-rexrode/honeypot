@@ -28,11 +28,11 @@
 			
 			<!-- Eventually add mobile friendly and small screen friendly view transitions -->
 			<div class="d-flex justify-content-around align-items-center h-75 overflow-auto row">
-				<div class="block d-flex flex-column col-5 h-75 bg-info rounded-3">
+				<div class="block d-flex flex-column col-5 h-75 rounded-3 mainSplash">
 					<form:form action="/register" method="POST" modelAttribute="newUser" class="h-100 my-3">
 						<div class="d-flex flex-column justify-content-between align-items-center h-100">
 							<div>
-								<h2>Register</h2>
+								<h2 class="accent">Register</h2>
 								<p class="d-flex justify-content-between row">
 									<form:label path="username" class="col-6">Username: </form:label>
 									<form:input path="username" class="col-6"/>
@@ -55,17 +55,17 @@
 								</p>		
 							</div>
 							<div class="w-50">
-								<input type="submit" value="Register" class="btn btn-primary w-100">
+								<input type="submit" value="Register" class="btn btn-primary w-100 accentSplash">
 							</div>
 						</div>
 					</form:form>
 				</div>
 				
-				<div class="block d-flex flex-column bg-info col-5 h-75 rounded-3">
+				<div class="block d-flex flex-column col-5 h-75 rounded-3 mainSplash">
 					<form:form action="/login" method="POST" modelAttribute="newLogin" class="h-100 my-3">
 						<div class="d-flex flex-column justify-content-between align-items-center h-100">
 							<div>
-								<h2>Login</h2>
+								<h2 class="accent">Login</h2>
 								<p class="d-flex justify-content-between row">
 									<form:label path="email" class="col-6">Email: </form:label>
 									<form:input path="email" type="email" class="col-6"/>
@@ -78,7 +78,7 @@
 								</p>
 							</div>
 							<div class="w-50">
-								<input type="submit" value="Login" class="btn btn-primary w-100">
+								<input type="submit" value="Login" class="btn btn-primary w-100 accentSplash">
 							</div>
 						</div>
 					</form:form>
