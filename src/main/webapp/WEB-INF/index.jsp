@@ -20,7 +20,7 @@
 	<body>
 		<div class="container vh-100 vw-100">	
 			<div class="navPane">
-				<h1>Welcome to Honey Pot Vacation Planner!</h1>
+				<h1>Honey Pot Vacation Planner</h1>
 			</div>
 			
 			<!-- Maybe make register block by itself in center with like honey pot graphic -->	

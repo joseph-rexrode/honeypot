@@ -18,8 +18,8 @@
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container">	
-			<nav class="navbar navbar-light navbar-expand-lg">
+		<div class="container vh-100">	
+			<nav class="navbar navbar-dark navbar-expand-lg">
 				<div class="container-fluid">
 					<a href="/home" class="navbar-brand">Honey Pot</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
     				</div>
 				</div>
 			</nav>
-			<div class="row my-4">
+			<div class="my-4 h-75 d-flex align-items-center justify-content-center fadeIn">
 				<h1>Welcome, ${loggedUser.username}</h1>
 			</div>
 		</div>

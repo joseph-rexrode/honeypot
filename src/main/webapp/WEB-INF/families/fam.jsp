@@ -62,7 +62,7 @@
 			<div class="row row-cols-1 row-cols-sm-2 g-3">
 				<c:forEach var="family" items="${families}">
 					<div class="col">
-						<div class="card">
+						<div class="card mainSplash">
 							<div class="card-body">
 								<h5 class="card-title">${family.getFamilyName()}</h5>
 								<a href="/families/${family.getId()}" class="btn stretched-link"></a>

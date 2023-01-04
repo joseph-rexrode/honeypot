@@ -29,3 +29,18 @@ body {
 .accentSplash:hover {
 	background-color: #DE9502;
 }
+
+.fadeIn {
+	animation: 1s ease-in 0s fadein; 
+}
+
+@keyframes fadein {
+	from {
+		transform: translateY(3vh);
+		color: transparent;
+	}
+	to {
+		transform: translateY(0);
+		color: white;
+	}
+}
