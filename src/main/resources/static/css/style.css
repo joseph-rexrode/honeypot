@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+
+/* GLOBAL CSS */
+
 body {
 	color: white;
 	background-color: #3F88C5
@@ -18,7 +21,8 @@ body {
 	border: 3px solid white;
 }
 
-.accent {
+.accent,
+#navbarBasic > .navbar-nav > .nav-item > a.active {
 	color: #FDB833;
 }
 
@@ -29,6 +33,8 @@ body {
 .accentSplash:hover {
 	background-color: #DE9502;
 }
+
+/* HOME PAGE */
 
 .fadeIn {
 	animation: 1s ease-in 0s fadein; 
