@@ -18,7 +18,7 @@
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container">	
+		<div class="container vh-100">	
 			<nav class="navbar navbar-dark navbar-expand-lg">
 				<div class="container-fluid">
 					<a href="/home" class="navbar-brand">Honey Pot</a>
@@ -60,36 +60,35 @@
 				<h1>New Family</h1>
 			</div>
 			
-			<div>
-				<form:form action="/families/new" method="POST" modelAttribute="family">
-					<div class="row mb-3">
-						<form:errors path="familyName" class="text-danger"/>
-					</div>
-					
-					<div class="row mb-3">
-						<form:label class="col-sm-2 col-form-label" path="familyName">Family Name:</form:label>
-						<div class="col-sm-10">
-							<form:input type="text" path="familyName" class="form-control"/>
+			<div class="d-flex h-50 align-items-center mx-2">
+				<div class="w-75 h-75 mainSplash d-flex flex-column justify-content-evenly row">
+					<form:form action="/families/new" method="POST" modelAttribute="family">
+						<div class="row mb-3">
+							<form:label class="col-sm-6 col-form-label" path="familyName">Family Name:</form:label>
+							<div class="col-sm-6">
+								<form:input type="text" path="familyName" class="form-control"/>
+								<form:errors path="familyName" class="accent text-center"/>
+							</div>
 						</div>
-					</div>
-					
-					<div class="row mb-3">
-						<form:label class="col-sm-2 col-form-label" path="users">Users:</form:label>
-						<div class="col-sm-10">
-							<c:forEach var="user" items="${users}">
-								<form:checkbox path="users" value="${user}"/>
-								${user.getUsername()}
-							</c:forEach>
+						
+						<div class="row mb-3">
+							<form:label class="col-sm-6 col-form-label" path="users">Users:</form:label>
+							<div class="col-sm-6">
+								<c:forEach var="user" items="${users}">
+									<form:checkbox path="users" value="${user}"/>
+									${user.getUsername()}
+								</c:forEach>
+							</div>
 						</div>
-					</div>
-					
-					<div class="d-flex flex-row my-4 justify-content-end">
-						<div class="col-4">
-							<button class="btn btn-primary w-100" type="submit">Create Family</button>
+						
+						<div class="d-flex flex-row justify-content-center">
+							<div class="col-4">
+								<button class="btn accentSplash w-100" type="submit">Create Family</button>
+							</div>
 						</div>
-					</div>
-					
-				</form:form>
+						
+					</form:form>
+				</div>
 			</div>
 		</div>
 	</body>
