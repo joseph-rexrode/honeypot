@@ -62,10 +62,10 @@
 			<div class="row row-cols-1 row-cols-sm-2 g-3">
 				<c:forEach var="family" items="${families}">
 					<div class="col">
-						<div class="card mainSplash">
-							<div class="card-body">
+						<div class="card mainSplash d-flex align-items-center">
+							<div class="card-body h-50 d-flex align-items-center justify-content-between w-100">
 								<h5 class="card-title">${family.getFamilyName()}</h5>
-								<a href="/families/${family.getId()}" class="btn stretched-link"></a>
+								<a href="/families/${family.getId()}" class="btn btn-warning stretched-link h-100 w-25"></a>
 							</div>
 						</div>
 					</div>
