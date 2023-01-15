@@ -34,6 +34,23 @@ body {
 	background-color: #DE9502;
 }
 
+.transparent {
+	color: transparent;
+	background-color: transparent;
+	height: inherit;
+}
+
+.transparent:hover {
+	color: white;
+	background-color: #FDB833;
+}
+
+.arrow {
+	fill: white;
+}
+
+
+
 /* HOME PAGE */
 
 .fadeIn {

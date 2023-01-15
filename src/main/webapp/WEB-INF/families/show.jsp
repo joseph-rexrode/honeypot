@@ -79,7 +79,7 @@
 						</div>
 						
 						<div class="d-flex flex-row my-4 justify-content-end">
-							<button type="submit" class="btn btn-primary">Add Family Member(s)</button>
+							<button type="submit" class="btn accentSplash">Add Family Member(s)</button>
 						</div>
 					</form:form>
 				</div>
@@ -101,7 +101,7 @@
 						</div>
 						
 						<div class="d-flex flex-row my-4 justify-content-end">
-							<button type="submit" class="btn btn-primary">Remove Family Member(s)</button>
+							<button type="submit" class="btn accentSplash">Remove Family Member(s)</button>
 						</div>
 					</form:form>
 				</div>
