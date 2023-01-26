@@ -1,15 +1,21 @@
 package com.josephrexrode.honeypot.controllers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,12 +30,20 @@ import com.josephrexrode.honeypot.services.HoneyPotService;
 @RequestMapping("/honeypots")
 public class HoneyPotController {
 	
+	
 	@Autowired
 	HoneyPotService hServ;
 	
 	@Autowired
 	FamilyService fServ;
 
+	// Added init binder to allow form dates to be parsed correctly from front to back
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+		sdf.setLenient(true);
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
+	}
 	
 	@GetMapping("")
 	public String honeypots(
@@ -69,7 +83,7 @@ public class HoneyPotController {
 			@Valid @ModelAttribute("honeyPot") HoneyPot honeypot,
 			BindingResult result,
 			Model model,
-			HttpSession session) {
+			HttpSession session) throws ParseException {
 		
 		User u = (User) session.getAttribute("loggedUser");
 		
@@ -81,6 +95,7 @@ public class HoneyPotController {
 			
 			return "/honeypots/new.jsp";
 		}
+		
 		
 		hServ.create(u, honeypot);
 		

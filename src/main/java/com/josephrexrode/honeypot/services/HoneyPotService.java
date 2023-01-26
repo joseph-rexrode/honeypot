@@ -22,6 +22,7 @@ public class HoneyPotService {
 	public HoneyPot create(User u, HoneyPot h) {
 		h.setCreator(u);
 		h.setAmountSaved(0.00);
+				
 		return hRepo.save(h);
 	}
 	

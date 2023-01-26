@@ -92,7 +92,8 @@
 						<div class="row mb-3">
 							<form:label class="col-sm-6 col-form-label" path="goalDate">Goal Date:</form:label>
 							<div class="col-sm-6">
-								<form:input type="date" path="goalDate" class="form-control"/>
+								<form:input path="goalDate" class="date"/>
+
 								<form:errors path="goalDate" class="accent text-center"/>
 							</div>
 						</div>
