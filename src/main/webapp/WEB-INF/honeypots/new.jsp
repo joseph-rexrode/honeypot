@@ -58,6 +58,35 @@
 			<div class="row my-4">
 				<h1>New Honey Pot</h1>
 			</div>
+			
+			<div class="d-flex h-50 align-items-center mx-2">
+				<div class="w-75 h-75 mainSplash d-flex flex-column justify-content-evenly row">
+					<form:form action="/honeypots/new" method="POST" modelAttribute="honeyPot">
+						<div class="row mb-3">
+							<form:label class="col-sm-6 col-form-label" path="occasion">Whatcha saving up for?</form:label>
+							<div class="col-sm-6">
+								<form:input type="text" path="occasion" class="form-control"/>
+								<form:errors path="occasion" class="accent text-center"/>
+							</div>
+						</div>
+						
+						<div class="row mb-3">
+							<form:label class="col-sm-6 col-form-label" path="goalAmount">Goal Amount:</form:label>
+							<div class="col-sm-6">
+								<form:input type="number" path="goalAmount" class="form-control"/>
+								<form:errors path="goalAmount" class="accent text-center"/>
+							</div>
+						</div>
+						
+						<div class="d-flex flex-row justify-content-center">
+							<div class="col-4">
+								<button class="btn accentSplash w-100" type="submit">Create Honey Pot</button>
+							</div>
+						</div>
+						
+					</form:form>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

@@ -44,6 +44,10 @@ public class HoneyPot {
 	@JoinColumn(name = "family_id")
 	private Family honeyFamily;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "creator_id")
+	private User creator;
+	
 	public HoneyPot() {}
 
 	public Long getId() {
@@ -96,5 +100,13 @@ public class HoneyPot {
 
 	public void setHoneyFamily(Family honeyFamily) {
 		this.honeyFamily = honeyFamily;
+	}
+
+	public User getCreator() {
+		return creator;
+	}
+
+	public void setCreator(User creator) {
+		this.creator = creator;
 	}
 }
