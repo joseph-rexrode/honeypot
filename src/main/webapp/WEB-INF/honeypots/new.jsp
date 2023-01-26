@@ -71,10 +71,29 @@
 						</div>
 						
 						<div class="row mb-3">
+							<form:label class="col-sm-6 col-form-label" path="honeyFamily">Which Family?</form:label>
+							<div class="col-sm-6">
+								<form:select path="honeyFamily" class="form-select">
+									<c:forEach var="family" items="${userFamilies}">
+										<form:option value="${family}" label="${family.familyName}"/>
+									</c:forEach>
+								</form:select>
+							</div>
+						</div>
+						
+						<div class="row mb-3">
 							<form:label class="col-sm-6 col-form-label" path="goalAmount">Goal Amount:</form:label>
 							<div class="col-sm-6">
-								<form:input type="number" path="goalAmount" class="form-control"/>
+								<form:input type="number" min="0.01" step="0.01" max="9999.99" path="goalAmount" class="form-control"/>
 								<form:errors path="goalAmount" class="accent text-center"/>
+							</div>
+						</div>
+						
+						<div class="row mb-3">
+							<form:label class="col-sm-6 col-form-label" path="goalDate">Goal Date:</form:label>
+							<div class="col-sm-6">
+								<form:input type="date" path="goalDate" class="form-control"/>
+								<form:errors path="goalDate" class="accent text-center"/>
 							</div>
 						</div>
 						

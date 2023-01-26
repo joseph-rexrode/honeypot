@@ -1,5 +1,7 @@
 package com.josephrexrode.honeypot.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -12,8 +14,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.josephrexrode.honeypot.models.Family;
 import com.josephrexrode.honeypot.models.HoneyPot;
 import com.josephrexrode.honeypot.models.User;
+import com.josephrexrode.honeypot.services.FamilyService;
 import com.josephrexrode.honeypot.services.HoneyPotService;
 
 @Controller
@@ -22,6 +26,9 @@ public class HoneyPotController {
 	
 	@Autowired
 	HoneyPotService hServ;
+	
+	@Autowired
+	FamilyService fServ;
 
 	
 	@GetMapping("")
@@ -47,6 +54,12 @@ public class HoneyPotController {
 			return "redirect:/";
 		}
 		
+		User u = (User) session.getAttribute("loggedUser");
+		
+		List<Family> userFamilies = fServ.getUserFamilies(u);
+		
+		model.addAttribute("userFamilies", userFamilies);
+		
 		return "/honeypots/new.jsp";
 		
 	}
@@ -61,6 +74,11 @@ public class HoneyPotController {
 		User u = (User) session.getAttribute("loggedUser");
 		
 		if (result.hasErrors()) {
+						
+			List<Family> userFamilies = fServ.getUserFamilies(u);
+			
+			model.addAttribute("userFamilies", userFamilies);
+			
 			return "/honeypots/new.jsp";
 		}
 		
