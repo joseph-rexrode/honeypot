@@ -11,5 +11,6 @@ import com.josephrexrode.honeypot.models.HoneyPot;
 public interface HoneyPotRepository extends CrudRepository<HoneyPot, Long> {
 	
 	Optional<HoneyPot> findById(Long id);
+		
 	
 }

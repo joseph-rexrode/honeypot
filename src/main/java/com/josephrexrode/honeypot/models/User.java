@@ -3,6 +3,7 @@ package com.josephrexrode.honeypot.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
@@ -33,13 +35,20 @@ public class User {
 	@Transient
 	private String confirm;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "users_families",
 			joinColumns = @JoinColumn(name = "users_id"),
 			inverseJoinColumns = @JoinColumn(name = "families_id")
 			)
 	private List<Family> families;
+	
+	
+	@OneToMany(mappedBy = "creator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<HoneyPot> createdPots;
+	
+	@OneToMany(mappedBy = "creator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Family> createdFamilies;
 	
 	public User() {}
 
@@ -90,6 +99,22 @@ public class User {
 
 	public void setFamilies(List<Family> families) {
 		this.families = families;
+	}
+
+	public List<HoneyPot> getCreatedPots() {
+		return createdPots;
+	}
+
+	public void setCreatedPots(List<HoneyPot> createdPots) {
+		this.createdPots = createdPots;
+	}
+
+	public List<Family> getCreatedFamilies() {
+		return createdFamilies;
+	}
+
+	public void setCreatedFamilies(List<Family> createdFamilies) {
+		this.createdFamilies = createdFamilies;
 	}
 	
 }

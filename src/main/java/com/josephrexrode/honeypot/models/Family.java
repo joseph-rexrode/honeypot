@@ -29,7 +29,7 @@ public class Family {
 	@JoinColumn(name = "creator_id")
 	private User creator;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "users_families",
 			joinColumns = @JoinColumn(name = "families_id"),
@@ -75,5 +75,13 @@ public class Family {
 
 	public void setUsers(List<User> users) {
 		this.users = users;
+	}
+
+	public List<HoneyPot> getHoneyPots() {
+		return honeyPots;
+	}
+
+	public void setHoneyPots(List<HoneyPot> honeyPots) {
+		this.honeyPots = honeyPots;
 	}
 }

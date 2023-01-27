@@ -1,5 +1,10 @@
 package com.josephrexrode.honeypot.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Hibernate;
+import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +31,19 @@ public class HoneyPotService {
 		return hRepo.save(h);
 	}
 	
+	// OTHER METHODS
 	
+	public List<HoneyPot> findUserPots(User u) throws HibernateException {
+		
+		ArrayList<HoneyPot> pots = new ArrayList<HoneyPot>();
+				
+		u.getFamilies().forEach((family) -> {
+			Hibernate.initialize(family.getHoneyPots());
+			family.getHoneyPots().forEach((honeyPot) -> {
+				pots.add(honeyPot);
+			});
+		});
+		
+		return (List<HoneyPot>)pots;
+	}
 }

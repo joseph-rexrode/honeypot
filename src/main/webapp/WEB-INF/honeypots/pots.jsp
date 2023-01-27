@@ -58,6 +58,29 @@
 			<div class="row my-4">
 				<h1>My Honey Pots</h1>
 			</div>
+			
+			<div class="row row-cols-1 row-cols-sm-2 g-3">
+				<c:forEach var="honeypot" items="${userPots}">
+					<div class="col">
+						<div class="card mainSplash d-flex align-items-center h-100">
+							<div class="d-flex align-items-center justify-content-between w-100 h-100">
+								<h5 class="p-3">${honeypot.getOccasion()}</h5>
+								<a href="/families/${honeypot.getId()}" class="btn transparent stretched-link w-25 p-3 d-flex align-items-center justify-content-center" onmouseover="chgFill('white', 'arrow')" onmouseout="chgFill('transparent', 'arrow')">
+									<svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 									width="800px" height="800px" viewBox="0 0 219.27 219.27"
+	 									xml:space="preserve" class="w-50 h-50">
+										<g>
+											<path class="arrow" d="M110.57,28.285l19.418,19.418H98.496c-47.301,0-85.783,38.482-85.783,85.783c0,47.302,38.483,85.783,85.783,85.783v-40
+													c-25.245,0-45.783-20.539-45.783-45.783c0-25.245,20.538-45.783,45.783-45.783h31.492l-19.417,19.417l28.283,28.284l67.703-67.701
+													L138.855,0L110.57,28.285z"/>
+										</g>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
 		</div>
 	</body>
 </html>

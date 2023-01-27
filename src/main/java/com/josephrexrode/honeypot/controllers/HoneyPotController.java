@@ -54,6 +54,14 @@ public class HoneyPotController {
 			return "redirect:/";
 		}
 		
+		User u = (User) session.getAttribute("loggedUser");
+		
+		
+		List<HoneyPot> userPots = hServ.findUserPots(u);
+		System.out.println(userPots);
+		
+		model.addAttribute("userPots", userPots);
+
 		return "/honeypots/pots.jsp";
 		
 	}
