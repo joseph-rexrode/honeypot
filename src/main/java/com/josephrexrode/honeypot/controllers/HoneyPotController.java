@@ -58,7 +58,6 @@ public class HoneyPotController {
 		
 		
 		List<HoneyPot> userPots = hServ.findUserPots(u);
-		System.out.println(userPots);
 		
 		model.addAttribute("userPots", userPots);
 

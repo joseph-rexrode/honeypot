@@ -1,13 +1,11 @@
 package com.josephrexrode.honeypot.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.Hibernate;
-import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.josephrexrode.honeypot.models.Family;
 import com.josephrexrode.honeypot.models.HoneyPot;
 import com.josephrexrode.honeypot.models.User;
 import com.josephrexrode.honeypot.repositories.FamilyRepository;
@@ -33,17 +31,10 @@ public class HoneyPotService {
 	
 	// OTHER METHODS
 	
-	public List<HoneyPot> findUserPots(User u) throws HibernateException {
+	public List<HoneyPot> findUserPots(User u) {
 		
-		ArrayList<HoneyPot> pots = new ArrayList<HoneyPot>();
-				
-		u.getFamilies().forEach((family) -> {
-			Hibernate.initialize(family.getHoneyPots());
-			family.getHoneyPots().forEach((honeyPot) -> {
-				pots.add(honeyPot);
-			});
-		});
+		List<Family> userFamilies = fRepo.findAllByUsers(u);
 		
-		return (List<HoneyPot>)pots;
+		return hRepo.findAllByHoneyFamilyIn(userFamilies);
 	}
 }

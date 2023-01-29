@@ -65,7 +65,7 @@
 						<div class="card mainSplash d-flex align-items-center h-100">
 							<div class="d-flex align-items-center justify-content-between w-100 h-100">
 								<h5 class="p-3">${honeypot.getOccasion()}</h5>
-								<a href="/families/${honeypot.getId()}" class="btn transparent stretched-link w-25 p-3 d-flex align-items-center justify-content-center" onmouseover="chgFill('white', 'arrow')" onmouseout="chgFill('transparent', 'arrow')">
+								<a href="/honeypots/${honeypot.getId()}" class="btn transparent stretched-link w-25 p-3 d-flex align-items-center justify-content-center" onmouseover="chgFill('white', 'arrow')" onmouseout="chgFill('transparent', 'arrow')">
 									<svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 									width="800px" height="800px" viewBox="0 0 219.27 219.27"
 	 									xml:space="preserve" class="w-50 h-50">
