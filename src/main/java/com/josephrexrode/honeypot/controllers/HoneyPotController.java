@@ -17,6 +17,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -107,5 +108,22 @@ public class HoneyPotController {
 		hServ.create(u, honeypot);
 		
 		return "redirect:/honeypots";
+	}
+	
+	@GetMapping("/{honeyId}")
+	public String specificHoneyPot(
+			@PathVariable("honeyId") Long id,
+			Model model,
+			HttpSession session) {
+		
+		if (session.getAttribute("loggedUser") == null) {
+			return "redirect:/";
+		}
+		
+		HoneyPot honeypot = hServ.getById(id);
+		
+		model.addAttribute("honeypot", honeypot);
+		
+		return "/honeypots/show.jsp";
 	}
 }

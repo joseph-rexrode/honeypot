@@ -29,6 +29,10 @@ public class HoneyPotService {
 		return hRepo.save(h);
 	}
 	
+	public HoneyPot getById(Long id) {
+		return hRepo.findById(id).orElse(null);
+	}
+	
 	// OTHER METHODS
 	
 	public List<HoneyPot> findUserPots(User u) {
