@@ -67,3 +67,13 @@ body {
 		color: white;
 	}
 }
+
+/* SPECIFIC HONEY POT PAGE */
+
+.noLink:link,
+.noLink:visited,
+.noLink:hover,
+.noLink:active {
+	text-decoration: none;
+}
+

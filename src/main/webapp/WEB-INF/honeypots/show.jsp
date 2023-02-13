@@ -18,7 +18,7 @@
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container">	
+		<div class="container vh-100">	
 			<nav class="navbar navbar-dark navbar-expand-lg">
 				<div class="container-fluid">
 					<a href="/home" class="navbar-brand">Honey Pot</a>
@@ -55,21 +55,27 @@
     				</div>
 				</div>
 			</nav>
-			<div class="row my-4">
-				<h1>${honeypot.occasion}</h1>
+			<div class="row my-4 d-flex flex-column justify-content-between align-items-center h-75">
+				<h1 class="d-flex justify-content-center">${honeypot.occasion}</h1>
+				
+				<div class="d-flex h-75">
+					<div class="w-50">
+						<p class="fw-bold fs-4">Creator: ${honeypot.creator.getUsername()}</p>
+						<p class="fw-bold fs-4">Family: ${honeypot.honeyFamily.getFamilyName()}</p>
+					</div>
+					<div class="w-50">
+						<a href="#" class="d-flex justify-content-end noLink">
+							<button class="btn accentSplash">Add Contribution?</button>
+						</a>
+					</div>
+				</div>
+				<div>
+					<p class="d-flex justify-content-center">Goal Progress: ${honeypot.amountSaved} / ${honeypot.goalAmount}</p>
+				</div>
 			</div>
 			
-			<div>
-				<p>Honeypot Creator: ${honeypot.creator.getUsername()}</p>
-			</div>
 			
-			<div>
-				<p>Goal Progress: ${honeypot.amountSaved} / ${honeypot.goalAmount}</p>
-			</div>
 			
-			<div>
-				<p>Honeypot Family: ${honeypot.honeyFamily.getFamilyName()}</p>
-			</div>
 			
 		</div>
 	</body>
