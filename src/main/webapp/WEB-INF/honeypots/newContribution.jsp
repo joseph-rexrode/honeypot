@@ -11,14 +11,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-	    <title>${honeypot.occasion}</title>
+	    <title>New Honey Pot Contribution</title>
 	    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/style.css">
 	    <script src="/webjars/jquery/jquery.min.js"></script>
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container vh-100">	
+		<div class="container">	
 			<nav class="navbar navbar-dark navbar-expand-lg">
 				<div class="container-fluid">
 					<a href="/home" class="navbar-brand">Honey Pot</a>
@@ -55,33 +55,30 @@
     				</div>
 				</div>
 			</nav>
-			<div class="row my-4 d-flex flex-column justify-content-around align-items-center h-75">
-				<h1 class="d-flex justify-content-center">${honeypot.occasion}</h1>
-				
-				<div class="h-85 d-flex flex-column justify-content-between">
-					<div class="d-flex">
-						<div class="w-50">
-							<p class="fw-bold fs-4">Creator: ${honeypot.creator.getUsername()}</p>
-							<p class="fw-bold fs-4">Family: ${honeypot.honeyFamily.getFamilyName()}</p>
-						</div>
-						<div class="w-50">
-							<a href="/honeypots/${honeypot.id}/contributions/new" class="d-flex justify-content-end noLink">
-								<button class="btn accentSplash">Add Contribution?</button>
-							</a>
-						</div>
-					</div>
-					
-					<div class="circle align-self-center"></div>
-					
-					<div>
-						<p class="d-flex justify-content-center">Goal Progress: ${honeypot.amountSaved} / ${honeypot.goalAmount}</p>
-					</div>
-				</div>
+			<div class="row my-4">
+				<h1>New Honey Pot Contribution</h1>
 			</div>
 			
-			
-			
-			
+			<div class="d-flex h-50 align-items-center mx-2">
+				<div class="w-75 h-75 mainSplash d-flex flex-column justify-content-evenly row">
+					<form:form action="/honeypots/${honeypot.id}/contributions/new" method="POST" modelAttribute="contribution">
+						<div class="row mb-3">
+							<form:label class="col-sm-6 col-form-label" path="contributionAmount">How much would you like to contribute?</form:label>
+							<div class="col-sm-6">
+								<form:input type="number" min="0.01" max="9999.99" path="contributionAmount" class="form-control"/>
+								<form:errors path="contributionAmount" class="accent text-center"/>
+							</div>
+						</div>
+						
+						<div class="d-flex flex-row justify-content-center">
+							<div class="col-4">
+								<button class="btn accentSplash w-100" type="submit">Contribute now!</button>
+							</div>
+						</div>
+						
+					</form:form>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

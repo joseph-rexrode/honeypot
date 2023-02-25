@@ -50,6 +50,9 @@ public class User {
 	@OneToMany(mappedBy = "creator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Family> createdFamilies;
 	
+	@OneToMany(mappedBy = "contributor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Contribution> userContributions;
+	
 	public User() {}
 
 	
@@ -116,5 +119,12 @@ public class User {
 	public void setCreatedFamilies(List<Family> createdFamilies) {
 		this.createdFamilies = createdFamilies;
 	}
-	
+
+	public List<Contribution> getUserContributions() {
+		return userContributions;
+	}
+
+	public void setUserContributions(List<Contribution> userContributions) {
+		this.userContributions = userContributions;
+	}
 }

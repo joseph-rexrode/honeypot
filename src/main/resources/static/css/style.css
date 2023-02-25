@@ -49,6 +49,9 @@ body {
 	fill: white;
 }
 
+.h-85 {
+	height: 85%;
+}
 
 
 /* HOME PAGE */
@@ -75,5 +78,12 @@ body {
 .noLink:hover,
 .noLink:active {
 	text-decoration: none;
+}
+
+.circle {
+	height: 250px;
+	width: 250px;
+	border: 2px solid red;
+	border-radius: 50%;
 }
 

@@ -21,9 +21,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.josephrexrode.honeypot.models.Contribution;
 import com.josephrexrode.honeypot.models.Family;
 import com.josephrexrode.honeypot.models.HoneyPot;
 import com.josephrexrode.honeypot.models.User;
+import com.josephrexrode.honeypot.services.ContributionService;
 import com.josephrexrode.honeypot.services.FamilyService;
 import com.josephrexrode.honeypot.services.HoneyPotService;
 
@@ -37,6 +39,9 @@ public class HoneyPotController {
 	
 	@Autowired
 	FamilyService fServ;
+	
+	@Autowired
+	ContributionService cServ;
 
 	// Added init binder to allow form dates to be parsed correctly from front to back
 	@InitBinder
@@ -125,5 +130,48 @@ public class HoneyPotController {
 		model.addAttribute("honeypot", honeypot);
 		
 		return "/honeypots/show.jsp";
+	}
+	
+	
+	// CONTRIBUTIONS //
+	
+	@GetMapping("/{honeyId}/contributions/new")
+	public String newContribution(
+			Model model,
+			@ModelAttribute("contribution") Contribution contribution,
+			HttpSession session,
+			@PathVariable("honeyId") Long honeyId) {
+		
+		if (session.getAttribute("loggedUser") == null) {
+			return "redirect:/";
+		}
+		
+		HoneyPot h = hServ.getById(honeyId);
+		
+		model.addAttribute("honeypot", h);
+		
+		return "/honeypots/newContribution.jsp";
+	}
+	
+	@PostMapping("/{honeyId}/contributions/new")
+	public String createContribution(
+			@Valid @ModelAttribute("contribution") Contribution contribution,
+			BindingResult result,
+			Model model,
+			HttpSession session,
+			@PathVariable("honeyId") Long honeyId) {
+		
+		User u = (User) session.getAttribute("loggedUser");
+		HoneyPot h = hServ.getById(honeyId);
+		
+		if (result.hasErrors()) {
+			model.addAttribute("honeypot", h);
+			
+			return "/honeypots/{honeyId}";
+		}
+		
+		cServ.create(contribution, u, h);
+		
+		return "redirect:/honeypots/{honeyId}";
 	}
 }
