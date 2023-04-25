@@ -2,10 +2,16 @@
 
 
 /* GLOBAL CSS */
+:root {
+	--primary-color: #3F88C5;
+	--accent-one: #FDB833;
+	--accent-two: #474448;
+	--accent-three: #DF928E;
+}
 
 body {
 	color: white;
-	background-color: #3F88C5
+	background-color: var(--primary-color);
 }
 
 .navPane {
@@ -16,22 +22,34 @@ body {
 }
 
 .mainSplash {
-	background-color: #3F88C5;
+	background-color: var(--primary-color);
 	color: white;
 	border: 3px solid white;
 }
 
-.accent,
-#navbarBasic > .navbar-nav > .nav-item > a.active {
-	color: #FDB833;
+.primary-color {
+	background-color: var(--primary-color);
 }
 
-.accentSplash {
-	background-color: #FDB833;
+.accent,
+#navbarBasic > .navbar-nav > .nav-item > a.active {
+	color: var(--accent-one);
+}
+
+.accentSplash, .primary-accent {
+	background-color: var(--accent-one);
 }
 
 .accentSplash:hover {
 	background-color: #DE9502;
+}
+
+.secondary-accent {
+	background-color: var(--accent-two);
+}
+
+.tertiary-accent {
+	background-color: var(--accent-three);
 }
 
 .transparent {
@@ -42,7 +60,7 @@ body {
 
 .transparent:hover {
 	color: white;
-	background-color: #FDB833;
+	background-color: var(--accent-one);
 }
 
 .arrow {
@@ -69,6 +87,11 @@ body {
 		transform: translateY(0);
 		color: white;
 	}
+}
+
+.shape-icon {
+	height: 50px;
+	width: 50px;
 }
 
 /* SPECIFIC HONEY POT PAGE */
