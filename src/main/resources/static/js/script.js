@@ -4,5 +4,5 @@ function chgFill(color, id) {
 
 
 $(document).ready(function() {	
-	$(".fadeIn").css("border", "2px solid red");
+	$(".fadeIn").css("border-bottom", "2px solid white");
 });
