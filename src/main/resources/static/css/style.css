@@ -92,7 +92,30 @@ body {
 .shape-icon {
 	height: 50px;
 	width: 50px;
-	border-left: 1px solid white;
+	position: relative;
+}
+
+.shape-icon:before {
+	content: "";
+	border-left: 2px solid white;
+	position: absolute;
+	top: 40%;
+	left: 0;
+	height: 15px;
+	width: 100%;
+	transition: 300ms ease-in-out;
+}
+
+.shape-icon:hover:before {
+	transition: 300ms ease-in-out;
+	content: "";
+	border-left: 2px solid white;
+	position: absolute;
+	top: 40%;
+	left: 96%;
+	height: 15px; 
+	width: 100%;
+	
 }
 
 /* SPECIFIC HONEY POT PAGE */

@@ -80,15 +80,15 @@
 					</div>
 					<div class="d-flex flex-column justify-content-between h-75 w-100">
 						<div class="d-flex justify-content-between align-items-center h-25 w-100">
-							<div class="shape-icon rounded-circle primary-accent"></div>
+							<div class="shape-icon rounded primary-accent"></div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 						</div>
 						<div class="d-flex justify-content-between align-items-center h-25 w-100">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-							<div class="shape-icon rounded-circle tertiary-accent"></div>
+							<div class="shape-icon rounded tertiary-accent"></div>
 						</div>
 						<div class="d-flex justify-content-between align-items-center h-25 w-100">
-							<div class="shape-icon rounded-circle primary-color"></div>
+							<div class="shape-icon rounded primary-color"></div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 						</div>
 					</div>
