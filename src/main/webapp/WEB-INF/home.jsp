@@ -78,16 +78,16 @@
 							Recent Contributions
 						</h2>
 					</div>
-					<div class="d-flex flex-column justify-content-between h-75 w-100">
-						<div class="d-flex justify-content-between align-items-center h-25 w-100">
+					<div class="d-flex flex-column justify-content-between h-75 w-100 py-2">
+						<div class="d-flex justify-content-between align-items-center h-25 w-100 cont-section">
 							<div class="shape-icon rounded primary-accent"></div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 						</div>
-						<div class="d-flex justify-content-between align-items-center h-25 w-100">
+						<div class="d-flex justify-content-between align-items-center h-25 w-100 cont-section">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 							<div class="shape-icon rounded tertiary-accent"></div>
 						</div>
-						<div class="d-flex justify-content-between align-items-center h-25 w-100">
+						<div class="d-flex justify-content-between align-items-center h-25 w-100 cont-section">
 							<div class="shape-icon rounded primary-color"></div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 						</div>

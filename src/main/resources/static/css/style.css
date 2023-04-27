@@ -106,7 +106,7 @@ body {
 	transition: 300ms ease-in-out;
 }
 
-.shape-icon:hover:before {
+.cont-section:hover > .shape-icon:before {
 	transition: 300ms ease-in-out;
 	content: "";
 	border-left: 2px solid white;
@@ -115,6 +115,16 @@ body {
 	left: 96%;
 	height: 15px; 
 	width: 100%;
+}
+
+.cont-section:hover {
+	transition: 300ms ease-in-out;
+	border: 2px solid;
+	padding: 10px;
+}
+
+.cont-section {
+	transition: 300ms ease-in-out;
 	
 }
 
