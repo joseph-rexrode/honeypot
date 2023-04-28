@@ -62,7 +62,7 @@
 					<div class="w-75">
 						<form:form action="/families/${fam.getId()}/add" method="POST" modelAttribute="family">
 							<input type="hidden" name="_method" value="put">
-							<div class="mb-3 d-flex align-items-center justify-content-evenly bg-info">
+							<div class="mb-3 d-flex align-items-center justify-content-evenly">
 								<c:forEach var="user" items="${addableMembers}">
 									<form:checkbox path="users" value="${user}"/>
 									${user.getUsername()}

@@ -61,7 +61,7 @@
 			</div>
 			
 			<div class="d-flex h-50 align-items-center mx-2">
-				<div class="w-75 h-75 mainSplash d-flex flex-column justify-content-evenly row">
+				<div class="h-75 mainSplash d-flex flex-column justify-content-evenly row form-box">
 					<form:form action="/families/new" method="POST" modelAttribute="family">
 						<div class="row mb-3">
 							<form:label class="col-sm-6 col-form-label" path="familyName">Family Name:</form:label>

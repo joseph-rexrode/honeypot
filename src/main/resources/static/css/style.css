@@ -12,6 +12,7 @@
 body {
 	color: white;
 	background-color: var(--primary-color);
+	font-family: "Helvetica";
 }
 
 .navPane {
@@ -142,5 +143,12 @@ body {
 	width: 250px;
 	border: 2px solid red;
 	border-radius: 50%;
+}
+
+
+/* NEW *INSERT THING HERE* PAGE */
+
+.form-box {
+	width: max(50%, 450px);
 }
 
