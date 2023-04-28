@@ -56,34 +56,25 @@
 				</div>
 			</nav>
 			
-			<div class="row my-4">
-				<h2>${fam.getFamilyName()}</h2>
-			</div>
-			
-			<c:if test="${addableMembers.size() != 0}">
-				<div>
-					<form:form action="/families/${fam.getId()}/add" method="POST" modelAttribute="family">
-						<input type="hidden" name="_method" value="put">
-						<div class="row mb-3">
-							<form:errors path="users" class="text-danger"/>
-						</div>
-						<div class="row mb-3">
-							<form:label class="col-sm-2 col-form-label" path="users">Users:</form:label>
-							<div class="col-sm-10">
+			<div class="row my-4 d-flex justify-content-between">
+				<h2 class="w-25">${fam.getFamilyName()}</h2>
+				<c:if test="${addableMembers.size() != 0}">
+					<div class="w-75">
+						<form:form action="/families/${fam.getId()}/add" method="POST" modelAttribute="family">
+							<input type="hidden" name="_method" value="put">
+							<div class="mb-3 d-flex align-items-center justify-content-evenly bg-info">
 								<c:forEach var="user" items="${addableMembers}">
 									<form:checkbox path="users" value="${user}"/>
 									${user.getUsername()}
 								</c:forEach>
+								<form:input type="hidden" path="familyName" value="${fam.getFamilyName()}"/>
+								<button type="submit" class="btn accentSplash">Add Family Member(s)</button>
 							</div>
-							<form:input type="hidden" path="familyName" value="${fam.getFamilyName()}"/>
-						</div>
-						
-						<div class="d-flex flex-row my-4 justify-content-end">
-							<button type="submit" class="btn accentSplash">Add Family Member(s)</button>
-						</div>
-					</form:form>
-				</div>
-			</c:if>
+						</form:form>
+					</div>
+				</c:if>
+			</div>
+			
 			
 			<c:if test="${removableMembers.size() != 0}">
 				<div>
