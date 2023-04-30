@@ -12,7 +12,10 @@
 body {
 	color: white;
 	background-color: var(--primary-color);
-	font-family: "Helvetica";
+}
+
+h1, h2, h3, p, span, body {
+	font-family: "Rubik", sans-serif;
 }
 
 .navPane {
@@ -150,5 +153,6 @@ body {
 
 .form-box {
 	width: max(50%, 450px);
+	padding: 20px;
 }
 
