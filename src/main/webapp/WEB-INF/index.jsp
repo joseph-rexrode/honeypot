@@ -21,7 +21,7 @@
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container vh-100 vw-100">	
+		<div class="wrapper">	
 			<div class="navPane">
 				<h1>Honey Pot Vacation Planner</h1>
 			</div>
@@ -30,7 +30,8 @@
 			<!-- And include a "returning user?" button that switches to the login block -->
 			
 			<!-- Eventually add mobile friendly and small screen friendly view transitions -->
-			<div class="d-flex justify-content-around align-items-center h-75 overflow-auto row">
+			
+			<div class="d-flex justify-content-around align-items-center overflow-auto">
 				<div class="block d-flex flex-column col-5 h-75 rounded-3 mainSplash">
 					<form:form action="/register" method="POST" modelAttribute="newUser" class="h-100 my-3">
 						<div class="d-flex flex-column justify-content-between align-items-center h-100">

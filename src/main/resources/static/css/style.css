@@ -9,6 +9,10 @@
 	--accent-three: #DF928E;
 }
 
+html {
+	font-size: 1em;
+}
+
 body {
 	color: white;
 	background-color: var(--primary-color);
@@ -18,11 +22,15 @@ h1, h2, h3, p, span, body {
 	font-family: "Rubik", sans-serif;
 }
 
+.wrapper {
+	margin: 2em;
+}
+
 .navPane {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 5rem;
+	padding: 2em;
 }
 
 .mainSplash {
