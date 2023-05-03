@@ -31,31 +31,31 @@
 			
 			<!-- Eventually add mobile friendly and small screen friendly view transitions -->
 			
-			<div class="d-flex justify-content-around align-items-center overflow-auto">
-				<div class="block d-flex flex-column col-5 h-75 rounded-3 mainSplash">
+			<div class="container-login">
+				<div class="container-login-register mainSplash">
 					<form:form action="/register" method="POST" modelAttribute="newUser" class="h-100 my-3">
-						<div class="d-flex flex-column justify-content-between align-items-center h-100">
+						<div class="">
 							<div>
 								<h2 class="accent">Register</h2>
-								<p class="d-flex justify-content-between row">
-									<form:label path="username" class="col-6">Username: </form:label>
-									<form:input path="username" class="col-6"/>
-									<form:errors path="username" class="text-danger"/>
+								<p class="">
+									<form:label path="username" class="">Username: </form:label>
+									<form:input path="username" class=""/>
+									<form:errors path="username" class="text-warning"/>
 								</p>
-								<p class="d-flex justify-content-between row">
-									<form:label path="email" class="col-6">Email: </form:label>
-									<form:input path="email" type="email" class="col-6"/>
-									<form:errors path="email" class="text-danger"/>
+								<p class="">
+									<form:label path="email" class="">Email: </form:label>
+									<form:input path="email" type="email" class=""/>
+									<form:errors path="email" class="text-warning"/>
 								</p>
-								<p class="d-flex justify-content-between row">
-									<form:label path="password" class="col-6">Password: </form:label>
-									<form:input path="password" type="password" class="col-6"/>
-									<form:errors path="password" class="text-danger"/>
+								<p class="">
+									<form:label path="password" class="">Password: </form:label>
+									<form:input path="password" type="password" class=""/>
+									<form:errors path="password" class="text-warning"/>
 								</p>
-								<p class="d-flex justify-content-between row">
-									<form:label path="confirm" class="col-6">Confirm Password: </form:label>
-									<form:input path="confirm" type="password" class="col-6"/>
-									<form:errors path="password" class="text-danger"/>
+								<p class="">
+									<form:label path="confirm" class="">Confirm Password: </form:label>
+									<form:input path="confirm" type="password" class=""/>
+									<form:errors path="password" class="text-warning"/>
 								</p>		
 							</div>
 							<div class="w-50">

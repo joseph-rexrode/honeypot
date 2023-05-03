@@ -33,6 +33,15 @@ h1, h2, h3, p, span, body {
 	padding: 2em;
 }
 
+.container-login {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.container-login-register {
+	
+}
+
 .mainSplash {
 	background-color: var(--primary-color);
 	color: white;
