@@ -33,8 +33,8 @@
 			
 			<div class="container-login">
 				<div class="container-login-register mainSplash">
-					<form:form action="/register" method="POST" modelAttribute="newUser" class="h-100 my-3">
-						<div class="">
+					<form:form action="/register" method="POST" modelAttribute="newUser">
+						<div>
 							<div>
 								<h2 class="accent">Register</h2>
 								<div class="form-section">
@@ -59,30 +59,30 @@
 								</div>		
 							</div>
 							<div class="w-50">
-								<input type="submit" value="Register" class="btn btn-primary w-100 accentSplash">
+								<input type="submit" value="Register" class="btn btn-primary accentSplash">
 							</div>
 						</div>
 					</form:form>
 				</div>
 				
-				<div class="d-flex flex-column col-5 h-75 rounded-3 mainSplash">
-					<form:form action="/login" method="POST" modelAttribute="newLogin" class="h-100 my-3">
-						<div class="d-flex flex-column justify-content-between align-items-center h-100">
+				<div class="container-login-register mainSplash">
+					<form:form action="/login" method="POST" modelAttribute="newLogin">
+						<div>
 							<div>
 								<h2 class="accent">Login</h2>
-								<p class="d-flex justify-content-between row">
+								<div class="form-section">
 									<form:label path="email" class="col-6">Email: </form:label>
-									<form:input path="email" type="email" class="col-6"/>
-									<form:errors path="email" class="text-danger"/>
-								</p>
-								<p class="d-flex justify-content-between row">
-									<form:label path="password" class="col-6">Password: </form:label>
-									<form:input path="password" type="password" class="col-6"/>
-									<form:errors path="password" class="text-danger"/>
-								</p>
+									<form:input path="email" type="email" class="form-section-input"/>
+									<form:errors path="email" class="text-warning"/>
+								</div>
+								<div class="form-section">
+									<form:label path="password">Password: </form:label>
+									<form:input path="password" type="password" class="form-section-input"/>
+									<form:errors path="password" class="text-warning"/>
+								</div>
 							</div>
 							<div class="w-50">
-								<input type="submit" value="Login" class="btn btn-primary w-100 accentSplash">
+								<input type="submit" value="Login" class="btn btn-primary accentSplash">
 							</div>
 						</div>
 					</form:form>

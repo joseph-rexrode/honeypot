@@ -24,7 +24,7 @@ h1, h2, h3, p, span, body {
 
 
 .wrapper {
-	margin: 2em;
+	width: 100%;
 }
 
 .navPane {
@@ -40,6 +40,7 @@ h1, h2, h3, p, span, body {
 .container-login {
 	display: flex;
 	justify-content: space-evenly;
+	width: 100%;
 }
 
 .container-login-register {
@@ -61,10 +62,7 @@ h1, h2, h3, p, span, body {
 	@media screen and (max-width: 700px) {
 		.container-login {
 			flex-direction: column;
-		}
-		
-		.form-section {
-			flex-direction: column;
+			width: 100%;
 		}
 	}
 
