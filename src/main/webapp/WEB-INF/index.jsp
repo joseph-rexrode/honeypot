@@ -37,26 +37,26 @@
 						<div class="">
 							<div>
 								<h2 class="accent">Register</h2>
-								<p class="">
-									<form:label path="username" class="">Username: </form:label>
-									<form:input path="username" class=""/>
+								<div class="form-section">
+									<form:label path="username">Username: </form:label>
+									<form:input path="username" class="form-section-input"/>
 									<form:errors path="username" class="text-warning"/>
-								</p>
-								<p class="">
-									<form:label path="email" class="">Email: </form:label>
-									<form:input path="email" type="email" class=""/>
+								</div>
+								<div class="form-section">
+									<form:label path="email">Email: </form:label>
+									<form:input path="email" type="email" class="form-section-input"/>
 									<form:errors path="email" class="text-warning"/>
-								</p>
-								<p class="">
-									<form:label path="password" class="">Password: </form:label>
-									<form:input path="password" type="password" class=""/>
+								</div>
+								<div class="form-section">
+									<form:label path="password">Password: </form:label>
+									<form:input path="password" type="password" class="form-section-input"/>
 									<form:errors path="password" class="text-warning"/>
-								</p>
-								<p class="">
-									<form:label path="confirm" class="">Confirm Password: </form:label>
-									<form:input path="confirm" type="password" class=""/>
+								</div>
+								<div class="form-section">
+									<form:label path="confirm">Confirm Password: </form:label>
+									<form:input path="confirm" type="password" class="form-section-input"/>
 									<form:errors path="password" class="text-warning"/>
-								</p>		
+								</div>		
 							</div>
 							<div class="w-50">
 								<input type="submit" value="Register" class="btn btn-primary w-100 accentSplash">
@@ -65,7 +65,7 @@
 					</form:form>
 				</div>
 				
-				<div class="block d-flex flex-column col-5 h-75 rounded-3 mainSplash">
+				<div class="d-flex flex-column col-5 h-75 rounded-3 mainSplash">
 					<form:form action="/login" method="POST" modelAttribute="newLogin" class="h-100 my-3">
 						<div class="d-flex flex-column justify-content-between align-items-center h-100">
 							<div>
