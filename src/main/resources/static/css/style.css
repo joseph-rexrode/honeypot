@@ -23,12 +23,17 @@
 		font-family: "Rubik", sans-serif;
 	}
 	
+	.h-85 {
+		height: 85%;
+	}
+	
 	.warning-text {
 		color: var(--accent-one);
 	}
 	
 	.wrapper {
 		width: 100%;
+		margin: 0 auto;
 	}
 	
 	.navPane {
@@ -38,6 +43,53 @@
 		padding: 2em;
 	}
 
+	.mainSplash {
+		background-color: var(--primary-color);
+		color: white;
+		border: 3px solid white;
+	}
+	
+	.primary-color {
+		background-color: var(--primary-color);
+	}
+
+	.accentSplash, .primary-accent {
+		background-color: var(--accent-one);
+	}
+	
+	.accentSplash:hover {
+		background-color: #DE9502;
+		box-shadow: 0 0 10px white;
+	}
+
+	.secondary-accent {
+		background-color: var(--accent-two);
+	}
+	
+	.tertiary-accent {
+		background-color: var(--accent-three);
+	}
+	
+	.transparent {
+		color: transparent;
+		background-color: transparent;
+		height: inherit;
+	}
+	
+	.transparent:hover {
+		color: white;
+		background-color: var(--accent-one);
+	}
+	
+	.accent,
+	#navbarBasic > .navbar-nav > .nav-item > a.active {
+		color: var(--accent-one);
+	}
+	
+	.center-text {
+		text-align: center;
+	}
+	
 
 /* INDEX PAGE */
 
@@ -107,113 +159,104 @@
 			}
 		}
 
-.mainSplash {
-	background-color: var(--primary-color);
-	color: white;
-	border: 3px solid white;
-}
 
-.primary-color {
-	background-color: var(--primary-color);
-}
+/* HOME PAGE */
 
-.accent,
-#navbarBasic > .navbar-nav > .nav-item > a.active {
-	color: var(--accent-one);
-}
+	.fadeIn {
+		animation: 1s ease-in 0s fadein; 
+	}
+	
+	@keyframes fadein {
+		from {
+			transform: translateY(3vh);
+			color: transparent;
+		}
+		to {
+			transform: translateY(0);
+			color: white;
+		}
+	}
+	
+	.shape-icon {
+		height: 50px;
+		width: 50px;
+		position: relative;
+	}
+	
+	.shape-icon:before {
+		content: "";
+		border-left: 2px solid white;
+		position: absolute;
+		top: 40%;
+		left: 0;
+		height: 15px;
+		width: 100%;
+		transition: 300ms ease-in-out;
+	}
+	
+	.contributions {
+		padding-top: 2em;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	
+	.cont-section:hover > .shape-icon:before {
+		transition: 300ms ease-in-out;
+		content: "";
+		border-left: 2px solid white;
+		position: absolute;
+		top: 40%;
+		left: 96%;
+		height: 15px; 
+	}
+	
+	.cont-section:hover {
+		transition: 300ms ease-in-out;
+		border-top: 2px solid white;
+		border-bottom: 2px solid white;
+	}
+	
+	.cont-section {
+		transition: 300ms ease-in-out;
+		padding: 2em 1em;
+		border-top: 2px solid transparent;
+		border-bottom: 2px solid transparent;
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.home-item1 { grid-area: header; display: flex; }
+	.home-item2 { grid-area: notifs; text-align: center;}
+	.home-item3 { 
+		grid-area: newpot; 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.home-item4 { grid-area: contributions; }
+	
+	.home-grid {
+		padding: 1em;
+		display: grid;
+		grid-template-areas: 
+			'header contributions'
+			'notifs contributions'
+			'newpot contributions';
+		gap: 30px;
+	}
+	
+	.home-grid > div {
+		padding: 2.5em 0;
+	}
 
-.accentSplash, .primary-accent {
-	background-color: var(--accent-one);
-}
 
-.accentSplash:hover {
-	background-color: #DE9502;
-	box-shadow: 0 0 10px white;
-}
-
-.secondary-accent {
-	background-color: var(--accent-two);
-}
-
-.tertiary-accent {
-	background-color: var(--accent-three);
-}
-
-.transparent {
-	color: transparent;
-	background-color: transparent;
-	height: inherit;
-}
-
-.transparent:hover {
-	color: white;
-	background-color: var(--accent-one);
-}
+/* MY HONEY POT / MY FAMILY PAGES */
 
 .arrow {
 	fill: white;
 }
 
-.h-85 {
-	height: 85%;
-}
-
-
-/* HOME PAGE */
-
-.fadeIn {
-	animation: 1s ease-in 0s fadein; 
-}
-
-@keyframes fadein {
-	from {
-		transform: translateY(3vh);
-		color: transparent;
-	}
-	to {
-		transform: translateY(0);
-		color: white;
-	}
-}
-
-.shape-icon {
-	height: 50px;
-	width: 50px;
-	position: relative;
-}
-
-.shape-icon:before {
-	content: "";
-	border-left: 2px solid white;
-	position: absolute;
-	top: 40%;
-	left: 0;
-	height: 15px;
-	width: 100%;
-	transition: 300ms ease-in-out;
-}
-
-.cont-section:hover > .shape-icon:before {
-	transition: 300ms ease-in-out;
-	content: "";
-	border-left: 2px solid white;
-	position: absolute;
-	top: 40%;
-	left: 96%;
-	height: 15px; 
-	width: 100%;
-}
-
-.cont-section:hover {
-	transition: 300ms ease-in-out;
-	border: 2px solid;
-	padding: 10px;
-}
-
-.cont-section {
-	transition: 300ms ease-in-out;
-	
-}
 
 /* SPECIFIC HONEY POT PAGE */
 

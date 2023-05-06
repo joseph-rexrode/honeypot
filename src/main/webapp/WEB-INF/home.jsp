@@ -23,7 +23,7 @@
 	    <script src="/js/script.js"></script>
 	</head>
 	<body>
-		<div class="container vh-100">	
+		<div class="wrapper">	
 			<nav class="navbar navbar-dark navbar-expand-lg">
 				<div class="container-fluid">
 					<a href="/home" class="navbar-brand">
@@ -62,36 +62,40 @@
     				</div>
 				</div>
 			</nav>
-			<div class="my-4 h-75 d-flex justify-content-between">
-				<div class="d-flex flex-column justify-content-between h-100">
+			
+			<div class="home-grid">
+				<div class="home-item1">
 					<h1 class="fadeIn">Welcome, ${loggedUser.username}</h1>
-					<div class="h-25 p-3 mainSplash d-flex flex-column align-items-center justify-content-center">
-						<h3>No new notifications</h3>
-					</div>
-					<div class="h-25 p-3 mainSplash d-flex flex-column align-items-center justify-content-around">
-						<h3>Got a new goal in mind?</h3>
-						<a href="/honeypots/new">
-							<button class="btn accentSplash">Create a new honey pot!</button>
-						</a>
-					</div>
 				</div>
-				<div class="h-100 rounded w-50 secondary-accent px-3">
-					<div class="d-flex align-items-center justify-content-center h-25 w-100">
+				
+				<div class="home-item2 mainSplash">
+					<h3>No new notifications</h3>
+				</div>
+				
+				<div class="home-item3 mainSplash">
+					<h3>Got a new goal in mind?</h3>
+					<a href="/honeypots/new">
+						<button class="form-button accentSplash">Create a new honey pot!</button>
+					</a>
+				</div>
+				
+				<div class="home-item4 rounded secondary-accent">
+					<div class="center-text">
 						<h2>
 							Recent Contributions
 						</h2>
 					</div>
-					<div class="d-flex flex-column justify-content-between h-75 w-100 py-2">
-						<div class="d-flex justify-content-between align-items-center h-25 w-100 cont-section">
-							<div class="shape-icon rounded primary-accent"></div>
+					<div class="contributions">
+						<div class="cont-section">
+							<div class="shape-icon rounded tertiary-accent"></div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 						</div>
-						<div class="d-flex justify-content-between align-items-center h-25 w-100 cont-section">
+						<div class="cont-section">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 							<div class="shape-icon rounded tertiary-accent"></div>
 						</div>
-						<div class="d-flex justify-content-between align-items-center h-25 w-100 cont-section">
-							<div class="shape-icon rounded primary-color"></div>
+						<div class="cont-section">
+							<div class="shape-icon rounded tertiary-accent"></div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 						</div>
 					</div>
