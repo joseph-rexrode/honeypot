@@ -268,9 +268,26 @@
 
 /* MY HONEY POT / MY FAMILY PAGES */
 
+.fam-grid {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	gap: 20px;
+	padding: 1em;
+}
+
+.fam-grid-item {
+	border: 2px solid red;
+}
+
 .arrow {
 	fill: white;
 }
+
+		@media screen and (max-width: 600px) {
+			.fam-grid {
+				grid-template-columns: 100%;
+			}
+		}
 
 
 /* SPECIFIC HONEY POT PAGE */
