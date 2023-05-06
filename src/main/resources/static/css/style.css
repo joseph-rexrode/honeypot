@@ -23,6 +23,9 @@
 		font-family: "Rubik", sans-serif;
 	}
 	
+	.warning-text {
+		color: var(--accent-one);
+	}
 	
 	.wrapper {
 		width: 100%;
@@ -57,11 +60,37 @@
 		padding: 1em;
 	}
 	
+	.form-section-error {
+		padding: 0em 1em;
+		justify-content: end;
+	}
+	
 	.form-section-input {
 		width: 45%;
 	}
 	
-		/* small screens */
+	.form-button-section {
+		display: flex;
+		justify-content: end;
+		padding: 1em;
+	}
+	
+	.form-button {
+		padding: 0.5em 1em;
+		border-radius: 20px;
+		border: none;
+		color: #010400;
+	}
+	
+	.form-button:hover {
+		cursor: pointer;
+	}
+	
+	.container-login-register:nth-child(2) > * > * > .form-button-section {
+		padding: 8.5em 1em 1em 1em;
+	}
+	
+		/* SMALL SCREENS */
 	
 		@media screen and (max-width: 725px) {
 			.container-login {
@@ -72,6 +101,9 @@
 			.container-login-register {
 				width: 70%;
 				margin: 1em 0;
+			}
+			.container-login-register:nth-child(2) > * > * > .form-button-section {
+				padding: 1em;
 			}
 		}
 
@@ -96,6 +128,7 @@
 
 .accentSplash:hover {
 	background-color: #DE9502;
+	box-shadow: 0 0 10px white;
 }
 
 .secondary-accent {

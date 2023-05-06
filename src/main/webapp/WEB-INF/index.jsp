@@ -18,7 +18,6 @@
 	    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/style.css">
 	    <script src="/webjars/jquery/jquery.min.js"></script>
-	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">	
@@ -28,9 +27,7 @@
 			
 			<!-- Maybe make register block by itself in center with like honey pot graphic -->	
 			<!-- And include a "returning user?" button that switches to the login block -->
-			
-			<!-- Eventually add mobile friendly and small screen friendly view transitions -->
-			
+						
 			<div class="container-login">
 				<div class="container-login-register mainSplash">
 					<form:form action="/register" method="POST" modelAttribute="newUser">
@@ -40,26 +37,38 @@
 								<div class="form-section">
 									<form:label path="username">Username: </form:label>
 									<form:input path="username" class="form-section-input"/>
+								</div>
+								<div class="form-section form-section-error">
 									<form:errors path="username" class="text-warning"/>
 								</div>
+								
 								<div class="form-section">
 									<form:label path="email">Email: </form:label>
 									<form:input path="email" type="email" class="form-section-input"/>
-									<form:errors path="email" class="text-warning"/>
 								</div>
+								<div class="form-section form-section-error">
+									<form:errors path="email" class="warning-text"/>
+								</div>
+								
 								<div class="form-section">
 									<form:label path="password">Password: </form:label>
 									<form:input path="password" type="password" class="form-section-input"/>
-									<form:errors path="password" class="text-warning"/>
 								</div>
+								<div class="form-section form-section-error">
+									<form:errors path="password" class="warning-text"/>
+								</div>
+								
 								<div class="form-section">
 									<form:label path="confirm">Confirm Password: </form:label>
 									<form:input path="confirm" type="password" class="form-section-input"/>
-									<form:errors path="password" class="text-warning"/>
-								</div>		
+								</div>	
+								<div class="form-section form-section-error">
+									<form:errors path="password" class="warning-text"/>
+								</div>
 							</div>
-							<div class="w-50">
-								<input type="submit" value="Register" class="btn btn-primary accentSplash">
+							
+							<div class="form-button-section">
+								<input type="submit" value="Register" class="form-button accentSplash">
 							</div>
 						</div>
 					</form:form>
@@ -70,19 +79,26 @@
 						<div>
 							<div>
 								<h2 class="accent">Login</h2>
+								
 								<div class="form-section">
 									<form:label path="email">Email: </form:label>
 									<form:input path="email" type="email" class="form-section-input"/>
-									<form:errors path="email" class="text-warning"/>
 								</div>
+								<div class="form-section form-section-error">
+									<form:errors path="email" class="warning-text"/>
+								</div>
+								
 								<div class="form-section">
 									<form:label path="password">Password: </form:label>
 									<form:input path="password" type="password" class="form-section-input"/>
-									<form:errors path="password" class="text-warning"/>
+								</div>
+								<div class="form-section form-section-error">
+									<form:errors path="password" class="warning-text"/>
 								</div>
 							</div>
-							<div class="w-50">
-								<input type="submit" value="Login" class="btn btn-primary accentSplash">
+							
+							<div class="form-button-section">
+								<input type="submit" value="Login" class="form-button accentSplash">
 							</div>
 						</div>
 					</form:form>
