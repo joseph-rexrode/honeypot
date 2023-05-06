@@ -226,7 +226,7 @@
 		justify-content: space-between;
 	}
 	
-	.home-item1 { grid-area: header; display: flex; }
+	.home-item1 { grid-area: header; display: flex;}
 	.home-item2 { grid-area: notifs; text-align: center;}
 	.home-item3 { 
 		grid-area: newpot; 
@@ -249,6 +249,21 @@
 	.home-grid > div {
 		padding: 2.5em 0;
 	}
+	
+		/* MEDIUM / SMALL SCREENS */
+		@media screen and (max-width: 850px) {
+			.home-grid {
+				grid-template-areas:
+					'header'
+					'notifs'
+					'newpot'
+					'contributions';
+				gap: 20px;
+			}
+			.home-grid > div {
+				padding: 1em 0;
+			}
+		}
 
 
 /* MY HONEY POT / MY FAMILY PAGES */
