@@ -71,7 +71,7 @@
 							<div>
 								<h2 class="accent">Login</h2>
 								<div class="form-section">
-									<form:label path="email" class="col-6">Email: </form:label>
+									<form:label path="email">Email: </form:label>
 									<form:input path="email" type="email" class="form-section-input"/>
 									<form:errors path="email" class="text-warning"/>
 								</div>
