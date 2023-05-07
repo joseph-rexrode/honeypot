@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-/* GLOBAL CSS */
+/* MAIN GLOBAL CSS */
 
 	:root {
 		--primary-color: #3F88C5;
@@ -10,88 +10,87 @@
 		--accent-three: #DF928E;
 	}
 	
+	*, *::before, *::after {
+		box-sizing: inherit;
+	}
+	
 	html {
 		font-size: 1em;
+		box-sizing: border-box;
 	}
 	
 	body {
 		color: white;
 		background-color: var(--primary-color);
-	}
-	
-	h1, h2, h3, p, span, body {
 		font-family: "Rubik", sans-serif;
-	}
-	
-	.h-85 {
-		height: 85%;
-	}
-	
-	.warning-text {
-		color: var(--accent-one);
-	}
-	
-	.wrapper {
-		width: 100%;
 		margin: 0 auto;
 	}
 	
-	.navPane {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2em;
-	}
-
-	.mainSplash {
-		background-color: var(--primary-color);
-		color: white;
-		border: 3px solid white;
-	}
 	
-	.primary-color {
-		background-color: var(--primary-color);
-	}
-
-	.accentSplash, .primary-accent {
-		background-color: var(--accent-one);
-	}
+	/* OTHER GLOBAL CSS */
 	
-	.accentSplash:hover {
-		background-color: #DE9502;
-		box-shadow: 0 0 10px white;
-	}
-
-	.secondary-accent {
-		background-color: var(--accent-two);
-	}
+		.h-85 {
+			height: 85%;
+		}
+		
+		.warning-text {
+			color: var(--accent-one);
+		}
+		
+		.wrapper {
+			width: 100%;
+			margin: 0 auto;
+		}
+		
+		.navPane {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 2em;
+		}
 	
-	.tertiary-accent {
-		background-color: var(--accent-three);
-	}
+		.mainSplash {
+			background-color: var(--primary-color);
+			color: white;
+			border: 3px solid white;
+		}
+		
+		.primary-color {
+			background-color: var(--primary-color);
+		}
 	
-	.transparent {
-		color: transparent;
-		background-color: transparent;
-		height: inherit;
-	}
+		.accentSplash, .primary-accent {
+			background-color: var(--accent-one);
+		}
+		
+		.accentSplash:hover {
+			opacity: 85%;
+			box-shadow: 0 0 10px white;
+		}
 	
-	.transparent:hover {
-		color: white;
-		background-color: var(--accent-one);
-	}
+		.secondary-accent {
+			background-color: var(--accent-two);
+		}
+		
+		.tertiary-accent {
+			background-color: var(--accent-three);
+		}
+		
+		.accent,
+		#navbarBasic > .navbar-nav > .nav-item > a.active {
+			color: var(--accent-one);
+		}
+		
+		.center-text {
+			text-align: center;
+		}
 	
-	.accent,
-	#navbarBasic > .navbar-nav > .nav-item > a.active {
-		color: var(--accent-one);
-	}
 	
-	.center-text {
-		text-align: center;
-	}
 	
-
-/* INDEX PAGE */
+	
+	/* ////////// */
+	/* INDEX PAGE */
+	/* ////////// */
 
 	.container-login {
 		display: flex;
@@ -142,7 +141,9 @@
 		padding: 8.5em 1em 1em 1em;
 	}
 	
+		/* ///////////// */
 		/* SMALL SCREENS */
+		/* ///////////// */
 	
 		@media screen and (max-width: 725px) {
 			.container-login {
@@ -160,7 +161,12 @@
 		}
 
 
+
+
+/* ///////// */
 /* HOME PAGE */
+/* ///////// */
+
 
 	.fadeIn {
 		animation: 1s ease-in 0s fadein; 
@@ -250,7 +256,12 @@
 		padding: 2.5em 0;
 	}
 	
+	
+		/* ////////////////////// */
 		/* MEDIUM / SMALL SCREENS */
+		/* ////////////////////// */
+		
+		
 		@media screen and (max-width: 850px) {
 			.home-grid {
 				grid-template-areas:
@@ -264,9 +275,12 @@
 				padding: 1em 0;
 			}
 		}
+		
+		
 
-
+/* ////////////////////////////// */
 /* MY HONEY POT / MY FAMILY PAGES */
+/* ////////////////////////////// */
 
 .fam-grid {
 	display: grid;
@@ -276,7 +290,20 @@
 }
 
 .fam-grid-item {
-	border: 2px solid red;
+	position: relative;
+	padding: 1em 2em;
+}
+
+.grid-item-link {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.grid-item-container > * {
+	margin: 0;
 }
 
 .arrow {
@@ -290,7 +317,10 @@
 		}
 
 
+
+/* /////////////////////// */
 /* SPECIFIC HONEY POT PAGE */
+/* /////////////////////// */
 
 .noLink:link,
 .noLink:visited,
@@ -307,7 +337,10 @@
 }
 
 
+
+/* //////////////////////////// */
 /* NEW *INSERT THING HERE* PAGE */
+/* //////////////////////////// */
 
 .form-box {
 	width: max(50%, 450px);
