@@ -318,7 +318,6 @@
 		}
 
 
-
 /* /////////////////////// */
 /* SPECIFIC HONEY POT PAGE */
 /* /////////////////////// */
@@ -347,4 +346,9 @@
 	width: max(50%, 450px);
 	padding: 20px;
 }
+
+.form-section:has(#new) {
+	justify-content: center;
+}
+
 

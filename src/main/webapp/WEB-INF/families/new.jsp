@@ -21,7 +21,7 @@
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container vh-100">	
+		<div class="container">	
 			<nav class="navbar navbar-dark navbar-expand-lg">
 				<div class="container-fluid">
 					<a href="/home" class="navbar-brand">Honey Pot</a>
@@ -59,12 +59,12 @@
 				</div>
 			</nav>
 			
-			<div class="row my-4">
+			<div class="center-text">
 				<h1>New Family</h1>
 			</div>
 			
-			<div class="d-flex h-50 align-items-center mx-2">
-				<div class="h-75 mainSplash d-flex flex-column justify-content-evenly row form-box">
+			<div class="form-section">
+				<div class="mainSplash form-box" id="new">
 					<form:form action="/families/new" method="POST" modelAttribute="family">
 						<div class="row mb-3">
 							<form:label class="col-sm-6 col-form-label" path="familyName">Family Name:</form:label>
