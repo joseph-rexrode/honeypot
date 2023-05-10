@@ -63,8 +63,8 @@
 				<h1>New Family</h1>
 			</div>
 			
-			<div class="container-login">
-				<div class="mainSplash form-box" id="new">
+			<div class="container__content">
+				<div class="mainSplash form__box" id="new">
 					<form:form action="/families/new" method="POST" modelAttribute="family">
 						<div class="row mb-3">
 							<form:label class="" path="familyName">Family Name:</form:label>

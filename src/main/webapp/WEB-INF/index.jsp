@@ -29,8 +29,8 @@
 			<!-- Maybe make register block by itself in center with like honey pot graphic -->	
 			<!-- And include a "returning user?" button that switches to the login block -->
 						
-			<div class="container-login">
-				<div class="container-login-register mainSplash">
+			<div class="container__content">
+				<div class="form__box mainSplash">
 					<form:form action="/register" method="POST" modelAttribute="newUser">
 						<div>
 							<div>
@@ -75,7 +75,7 @@
 					</form:form>
 				</div>
 				
-				<div class="container-login-register mainSplash">
+				<div class="form__box mainSplash">
 					<form:form action="/login" method="POST" modelAttribute="newLogin">
 						<div>
 							<div>

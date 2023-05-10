@@ -52,7 +52,6 @@
 		.mainSplash {
 			background-color: var(--primary-color);
 			color: white;
-			border: 3px solid white;
 		}
 		
 		.primary-color {
@@ -92,17 +91,18 @@
 	/* INDEX PAGE */
 	/* ////////// */
 
-	.container-login {
+	.container__content {
 		display: flex;
 		justify-content: space-evenly;
 		width: 100%;
 	}
 
-	.container-login-register {
+	.form__box {
 		padding: 1em 2em;
 		width: 45%;
 		max-width: 450px;
 		min-width: 365px;
+		border: 3px solid white;
 	}
 	
 	.form-section {
@@ -342,9 +342,6 @@
 /* NEW *INSERT THING HERE* PAGE */
 /* //////////////////////////// */
 
-.form-box {
-	padding: 20px;
-}
 
 .container-login:has(#new) {
 	border: 2px solid red;
