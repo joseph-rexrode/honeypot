@@ -52,6 +52,8 @@
 		.mainSplash {
 			background-color: var(--primary-color);
 			color: white;
+			border: 3px solid white;
+			
 		}
 		
 		.primary-color {
@@ -102,7 +104,6 @@
 		width: 45%;
 		max-width: 450px;
 		min-width: 365px;
-		border: 3px solid white;
 	}
 	
 	.form-section {
@@ -343,8 +344,6 @@
 /* //////////////////////////// */
 
 
-.container-login:has(#new) {
-	border: 2px solid red;
-}
+
 
 

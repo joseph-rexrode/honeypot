@@ -21,7 +21,7 @@
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container">	
+		<div class="wrapper">	
 			<nav class="navbar navbar-dark navbar-expand-lg">
 				<div class="container-fluid">
 					<a href="/home" class="navbar-brand">Honey Pot</a>
@@ -64,30 +64,28 @@
 			</div>
 			
 			<div class="container__content">
-				<div class="mainSplash form__box" id="new">
+				<div class="mainSplash form__box">
 					<form:form action="/families/new" method="POST" modelAttribute="family">
-						<div class="row mb-3">
-							<form:label class="" path="familyName">Family Name:</form:label>
-							<div class="col-sm-6">
-								<form:input type="text" path="familyName" class="form-section-input"/>
-								<form:errors path="familyName" class="form-section-error warning-text"/>
-							</div>
+					
+						<div class="form-section">
+							<form:label path="familyName">Family Name:</form:label>
+							<form:input type="text" path="familyName" class="form-section-input"/>
 						</div>
 						
-						<div class="row mb-3">
-							<form:label class="col-sm-6 col-form-label" path="users">Users:</form:label>
-							<div class="col-sm-6">
-								<c:forEach var="user" items="${users}">
-									<form:checkbox path="users" value="${user}"/>
-									${user.getUsername()}
-								</c:forEach>
-							</div>
+						<div class="form-section">
+							<form:errors path="familyName" class="form-section-error warning-text"/>
 						</div>
 						
-						<div class="d-flex flex-row justify-content-center">
-							<div class="col-4">
-								<button class="btn accentSplash w-100" type="submit">Create Family</button>
-							</div>
+						<div class="form-section">
+							<form:label path="users">Users:</form:label>
+							<c:forEach var="user" items="${users}">
+								<form:checkbox path="users" value="${user}"/>
+								${user.getUsername()}
+							</c:forEach>
+						</div>
+						
+						<div class="form-button-section" style="justify-content: center;">
+							<button class="form-button accentSplash" type="submit">Create</button>
 						</div>
 						
 					</form:form>

@@ -21,7 +21,7 @@
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container">	
+		<div class="wrapper">	
 			<nav class="navbar navbar-dark navbar-expand-lg">
 				<div class="container-fluid">
 					<a href="/home" class="navbar-brand">Honey Pot</a>
@@ -58,52 +58,49 @@
     				</div>
 				</div>
 			</nav>
-			<div class="row my-4">
+			<div class="center-text">
 				<h1>New Honey Pot</h1>
 			</div>
 			
-			<div class="d-flex h-50 align-items-center mx-2">
-				<div class="h-75 mainSplash d-flex flex-column justify-content-evenly row form-box">
+			<div class="container__content">
+				<div class="mainSplash form__box">
 					<form:form action="/honeypots/new" method="POST" modelAttribute="honeyPot">
-						<div class="row mb-3">
-							<form:label class="col-sm-6 col-form-label" path="occasion">Whatcha saving up for?</form:label>
-							<div class="col-sm-6">
-								<form:input type="text" path="occasion" class="form-control"/>
-								<form:errors path="occasion" class="accent text-center"/>
-							</div>
+						<div class="form-section">
+							<form:label path="occasion">Whatcha saving up for?</form:label>
+							<form:input type="text" path="occasion" class="form-section-input"/>
+						</div>
+						<div class="form-section">
+							<form:errors path="occasion" class="form-section-error warning-text"/>
 						</div>
 						
-						<div class="row mb-3">
-							<form:label class="col-sm-6 col-form-label" path="honeyFamily">Which Family?</form:label>
-							<div class="col-sm-6">
-								<form:select path="honeyFamily" class="form-select">
-									<c:forEach var="family" items="${userFamilies}">
-										<form:option value="${family}" label="${family.familyName}"/>
-									</c:forEach>
-								</form:select>
-							</div>
+						<div class="form-section">
+							<form:label path="honeyFamily">Which Family?</form:label>
+							<form:select path="honeyFamily" class="form-section-input">
+								<c:forEach var="family" items="${userFamilies}">
+									<form:option value="${family}" label="${family.familyName}"/>
+								</c:forEach>
+							</form:select>
 						</div>
 						
-						<div class="row mb-3">
-							<form:label class="col-sm-6 col-form-label" path="goalAmount">Goal Amount:</form:label>
-							<div class="col-sm-6">
-								<form:input type="number" min="0.01" step="0.01" max="9999.99" path="goalAmount" class="form-control"/>
-								<form:errors path="goalAmount" class="accent text-center"/>
-							</div>
+						<div class="form-section">
+							<form:label path="goalAmount">Goal Amount:</form:label>
+							<form:input type="number" min="0.01" step="0.01" max="9999.99" path="goalAmount" class="form-section-input"/>
+						</div>
+						<div class="form-section">
+							<form:errors path="goalAmount" class="form-section-error warning-text"/>
 						</div>
 						
-						<div class="row mb-3">
-							<form:label class="col-sm-6 col-form-label" path="goalDate">Goal Date:</form:label>
-							<div class="col-sm-6">
-								<form:input path="goalDate" class="date"/>
-
-								<form:errors path="goalDate" class="accent text-center"/>
-							</div>
+						<div class="form-section">
+							<form:label path="goalDate">Goal Date:</form:label>
+							<form:input path="goalDate" class="date form-section-input"/>
+						</div>
+						<div class="form-section">
+							<form:errors path="goalDate" class="form-section-error warning-text"/>
 						</div>
 						
 						<div class="d-flex flex-row justify-content-center">
 							<div class="col-4">
-								<button class="btn accentSplash w-100" type="submit">Create Honey Pot</button>
+								<button class="btn accentSplash w-100" type="submit">Create</button>
 							</div>
 						</div>
 						
