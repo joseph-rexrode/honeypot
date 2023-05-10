@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "users")
@@ -25,11 +27,14 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank(message = "Must include a username")
 	private String username;
 	
+	@NotBlank(message = "Must include an email adddress")
 	@Email(message = "Please enter a valid email address")
 	private String email;
 	
+	@NotBlank(message = "Must include a password")
 	private String password;
 	
 	@Transient
