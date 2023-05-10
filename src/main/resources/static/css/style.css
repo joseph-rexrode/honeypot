@@ -343,12 +343,11 @@
 /* //////////////////////////// */
 
 .form-box {
-	width: max(50%, 450px);
 	padding: 20px;
 }
 
-.form-section:has(#new) {
-	justify-content: center;
+.container-login:has(#new) {
+	border: 2px solid red;
 }
 
 

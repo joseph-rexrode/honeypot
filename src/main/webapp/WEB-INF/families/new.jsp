@@ -63,14 +63,14 @@
 				<h1>New Family</h1>
 			</div>
 			
-			<div class="form-section">
+			<div class="container-login">
 				<div class="mainSplash form-box" id="new">
 					<form:form action="/families/new" method="POST" modelAttribute="family">
 						<div class="row mb-3">
-							<form:label class="col-sm-6 col-form-label" path="familyName">Family Name:</form:label>
+							<form:label class="" path="familyName">Family Name:</form:label>
 							<div class="col-sm-6">
-								<form:input type="text" path="familyName" class="form-control"/>
-								<form:errors path="familyName" class="accent text-center"/>
+								<form:input type="text" path="familyName" class="form-section-input"/>
+								<form:errors path="familyName" class="form-section-error warning-text"/>
 							</div>
 						</div>
 						
