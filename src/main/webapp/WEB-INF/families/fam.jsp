@@ -66,8 +66,7 @@
 			<div class="fam-grid">
 				<c:forEach var="family" items="${families}">
 					<div class="fam-grid-item mainSplash">
-						<a href="/families/${family.getId()}" class="grid-item-link" onmouseover="chgFill('white', 'arrow')" onmouseout="chgFill('transparent', 'arrow')">
-						</a>
+						<a href="/families/${family.getId()}" class="grid-item-link"></a>
 						<div class="grid-item-container">
 							<h5>${family.getFamilyName()}</h5>
 						</div>

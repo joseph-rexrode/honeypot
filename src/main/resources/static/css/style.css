@@ -23,6 +23,7 @@
 		color: white;
 		background-color: var(--primary-color);
 		font-family: "Rubik", sans-serif;
+		font-size: 1.125rem;
 		margin: 0 auto;
 	}
 	
@@ -283,14 +284,14 @@
 /* MY HONEY POT / MY FAMILY PAGES */
 /* ////////////////////////////// */
 
-.fam-grid {
+.fam-grid, .pot-grid {
 	display: grid;
 	grid-template-columns: 40% 40%;
 	gap: 20px;
 	padding: 1em;
 }
 
-.fam-grid-item {
+.fam-grid-item, .pot-grid-item {
 	position: relative;
 	padding: 2em;
 	border-radius: 5px;
