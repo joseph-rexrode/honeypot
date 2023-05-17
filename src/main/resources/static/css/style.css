@@ -148,16 +148,16 @@
 		/* ///////////// */
 	
 		@media screen and (max-width: 725px) {
-			.container-login {
+			.container__content {
 				flex-direction: column;
 				align-items: center;
 				width: 100%;
 			}
-			.container-login-register {
+			.form__box {
 				width: 70%;
 				margin: 1em 0;
 			}
-			.container-login-register:nth-child(2) > * > * > .form-button-section {
+			.form__box:nth-child(2) > * > * > .form-button-section {
 				padding: 1em;
 			}
 		}

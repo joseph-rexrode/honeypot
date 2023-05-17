@@ -11,6 +11,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>${fam.getFamilyName()}</title>
 	    <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -66,6 +67,14 @@
 						<form:form action="/families/${fam.getId()}/add" method="POST" modelAttribute="family">
 							<input type="hidden" name="_method" value="put">
 							<div class="mb-3 d-flex align-items-center justify-content-evenly">
+							
+								<!-- Figure out how to get a multiple select dropdown working -->
+								
+								<%-- <form:select multiple="" path="users">
+									<c:forEach var="user" items="${addableMembers}">
+										<form:option value="${user}" label="${user.getUsername()}"></form:option>
+									</c:forEach>
+								</form:select> --%>
 								<c:forEach var="user" items="${addableMembers}">
 									<form:checkbox path="users" value="${user}"/>
 									${user.getUsername()}
