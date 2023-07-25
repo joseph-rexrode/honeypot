@@ -20,6 +20,7 @@
 		<link rel="stylesheet" href="/css/style.css">
 	    <script src="/webjars/jquery/jquery.min.js"></script>
 	    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	    <script src="/js/script.js"></script>
 	</head>
 	<body>
 		<div class="container vh-100">	
@@ -75,8 +76,12 @@
 						</div>
 					</div>
 					
-					<div class="circle align-self-center"></div>
-					
+					<div class="circle align-self-center">
+						<div id="progress">
+							<input type="hidden" id="amountSaved" value="${honeypot.getAmountSaved()}"/>
+							<input type="hidden" id="goalAmount" value="${honeypot.getGoalAmount()}"/>
+						</div>
+					</div>
 					<div>
 						<p class="d-flex justify-content-center">Goal Progress: ${honeypot.amountSaved} / ${honeypot.goalAmount}</p>
 					</div>
